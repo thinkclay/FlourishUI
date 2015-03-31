@@ -118,6 +118,19 @@
                                     <action selector="showModalExamples:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Cgv-P7-Joa"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This is input text with custom padding!" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuT-0e-DOw" customClass="InputText" customModule="FlourishUI" customModuleProvider="target">
+                                <rect key="frame" x="16" y="353" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jTd-TZ-e6s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="padding">
+                                        <size key="value" width="15" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.93000000000000005" green="0.91698000000000024" blue="0.89280000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -138,7 +151,10 @@
                             <constraint firstItem="Tfz-cj-w7Y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="epG-TR-mhR"/>
                             <constraint firstItem="rwK-u1-pi9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fMC-HB-wbY"/>
                             <constraint firstItem="rwK-u1-pi9" firstAttribute="top" secondItem="Tfz-cj-w7Y" secondAttribute="bottom" constant="20" id="gZh-IE-OAY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RuT-0e-DOw" secondAttribute="trailing" id="iKa-4D-Ixu"/>
+                            <constraint firstItem="RuT-0e-DOw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="kuX-bv-48p"/>
                             <constraint firstItem="PlY-sr-cgc" firstAttribute="top" secondItem="KhQ-K8-LvS" secondAttribute="bottom" constant="8" id="mc8-3q-fWD"/>
+                            <constraint firstItem="RuT-0e-DOw" firstAttribute="top" secondItem="k7G-Mm-eI6" secondAttribute="bottom" constant="40" id="q1a-QO-icY"/>
                             <constraint firstItem="Tfz-cj-w7Y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="y5T-7t-pQ5"/>
                         </constraints>
                     </view>

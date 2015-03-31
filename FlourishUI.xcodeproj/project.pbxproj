@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F154E7A1ACB5A5C008847A3 /* InputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F154E791ACB5A5C008847A3 /* InputText.swift */; };
 		6FEEC72E1A9FD7F800E6BCCE /* FlourishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEC72D1A9FD7F800E6BCCE /* FlourishUITests.swift */; };
 		6FEEC7441A9FD86C00E6BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEC7381A9FD86C00E6BCCE /* AppDelegate.swift */; };
 		6FEEC7451A9FD86C00E6BCCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FEEC7391A9FD86C00E6BCCE /* LaunchScreen.xib */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F154E791ACB5A5C008847A3 /* InputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputText.swift; sourceTree = "<group>"; };
 		6FEEC7121A9FD7F700E6BCCE /* FlourishUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlourishUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEEC7271A9FD7F800E6BCCE /* FlourishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlourishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEEC72C1A9FD7F800E6BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		6FEEC7401A9FD86C00E6BCCE /* FlourishUI */ = {
 			isa = PBXGroup;
 			children = (
+				6F154E791ACB5A5C008847A3 /* InputText.swift */,
 				6FEEC7411A9FD86C00E6BCCE /* Button.swift */,
 				6FEEC7421A9FD86C00E6BCCE /* Modal.swift */,
 				6FEEC7431A9FD86C00E6BCCE /* UIColor.swift */,
@@ -236,6 +239,7 @@
 				6FEEC7441A9FD86C00E6BCCE /* AppDelegate.swift in Sources */,
 				6FEEC74B1A9FD86C00E6BCCE /* Modal.swift in Sources */,
 				6FEEC74C1A9FD86C00E6BCCE /* UIColor.swift in Sources */,
+				6F154E7A1ACB5A5C008847A3 /* InputText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
