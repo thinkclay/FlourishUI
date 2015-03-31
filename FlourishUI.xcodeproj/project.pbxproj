@@ -13,7 +13,6 @@
 		6FEEC7451A9FD86C00E6BCCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FEEC7391A9FD86C00E6BCCE /* LaunchScreen.xib */; };
 		6FEEC7461A9FD86C00E6BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FEEC73B1A9FD86C00E6BCCE /* Main.storyboard */; };
 		6FEEC7471A9FD86C00E6BCCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FEEC73D1A9FD86C00E6BCCE /* Images.xcassets */; };
-		6FEEC7481A9FD86C00E6BCCE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FEEC73E1A9FD86C00E6BCCE /* Info.plist */; };
 		6FEEC7491A9FD86C00E6BCCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEC73F1A9FD86C00E6BCCE /* ViewController.swift */; };
 		6FEEC74A1A9FD86C00E6BCCE /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEC7411A9FD86C00E6BCCE /* Button.swift */; };
 		6FEEC74B1A9FD86C00E6BCCE /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEC7421A9FD86C00E6BCCE /* Modal.swift */; };
@@ -213,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FEEC7481A9FD86C00E6BCCE /* Info.plist in Resources */,
 				6FEEC7471A9FD86C00E6BCCE /* Images.xcassets in Resources */,
 				6FEEC7451A9FD86C00E6BCCE /* LaunchScreen.xib in Resources */,
 				6FEEC7461A9FD86C00E6BCCE /* Main.storyboard in Resources */,
@@ -317,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -355,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

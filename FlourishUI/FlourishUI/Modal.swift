@@ -299,10 +299,10 @@ public class Modal: UIViewController
     {
       case .Success :
         return ("Success", Color.success)
-        
+
       case .Error :
         return ("Error", Color.error)
-        
+       
       case .Notice :
         return ("Notice", Color.notice)
         
