@@ -104,11 +104,7 @@ public class Modal: UIViewController
   override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
   {
     super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
-  }
   
-  required override public init()
-  {
-    super.init()
     // Set up main view
     view.frame = UIScreen.mainScreen().bounds
     view.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
@@ -299,24 +295,22 @@ public class Modal: UIViewController
   
   private func metaForStatus(status: Status) -> (text: String, color: UIColor)
   {
-    let color: UIColor
-    
     switch status
     {
-    case .Success :
-      return ("Success", Color.success)
-      
-    case .Error :
-      return ("Error", Color.error)
-      
-    case .Notice :
-      return ("Notice", Color.notice)
-      
-    case .Warning :
-      return ("Warning", Color.warning)
-      
-    case .Info :
-      return ("Info", Color.info)
+      case .Success :
+        return ("Success", Color.success)
+        
+      case .Error :
+        return ("Error", Color.error)
+        
+      case .Notice :
+        return ("Notice", Color.notice)
+        
+      case .Warning :
+        return ("Warning", Color.warning)
+        
+      case .Info :
+        return ("Info", Color.info)
     }
   }
   

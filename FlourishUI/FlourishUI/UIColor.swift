@@ -18,27 +18,13 @@ extension UIColor
     
       if scanner.scanHexLongLong(&hexValue)
       {
-        if count(hex) == 6
-        {
-          red   = CGFloat((hexValue & 0xFF0000) >> 16) / 255.0
-          green = CGFloat((hexValue & 0x00FF00) >> 8)  / 255.0
-          blue  = CGFloat(hexValue & 0x0000FF) / 255.0
-        }
-        else if count(hex) == 8
-        {
-          red   = CGFloat((hexValue & 0xFF000000) >> 24) / 255.0
-          green = CGFloat((hexValue & 0x00FF0000) >> 16) / 255.0
-          blue  = CGFloat((hexValue & 0x0000FF00) >> 8)  / 255.0
-          alpha = CGFloat(hexValue & 0x000000FF)         / 255.0
-        }
-        else
-        {
-          print("invalid rgb string, length should be 7 or 9")
-        }
+        red   = CGFloat((hexValue & 0xFF0000) >> 16) / 255.0
+        green = CGFloat((hexValue & 0x00FF00) >> 8)  / 255.0
+        blue  = CGFloat(hexValue & 0x0000FF) / 255.0
       }
       else
       {
-        println("scan hex error")
+        println("scan hex error, your string should be a hex string of 7 chars. ie: #ebb100")
       }
     }
     else
