@@ -18,13 +18,13 @@ extension UIColor
     
       if scanner.scanHexLongLong(&hexValue)
       {
-        if count(hex) == 6
+        if countElements(hex) == 6
         {
           red   = CGFloat((hexValue & 0xFF0000) >> 16) / 255.0
           green = CGFloat((hexValue & 0x00FF00) >> 8)  / 255.0
           blue  = CGFloat(hexValue & 0x0000FF) / 255.0
         }
-        else if count(hex) == 8
+        else if countElements(hex) == 8
         {
           red   = CGFloat((hexValue & 0xFF000000) >> 24) / 255.0
           green = CGFloat((hexValue & 0x00FF0000) >> 16) / 255.0

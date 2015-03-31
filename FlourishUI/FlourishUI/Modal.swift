@@ -164,6 +164,10 @@ public class Modal: UIViewController
     self.status = status
   }
   
+  convenience init(title: String?, body: String?, status: Bool)
+  {
+    self.init(title: title, body: body, status: status ? .Success : .Error)
+  }
   
   override public func viewWillLayoutSubviews()
   {
@@ -299,24 +303,24 @@ public class Modal: UIViewController
   
   private func metaForStatus(status: Status) -> (text: String, color: UIColor)
   {
-    let color: UIColor
+    var color: UIColor
     
     switch status
     {
-    case .Success :
-      return ("Success", Color.success)
-      
-    case .Error :
-      return ("Error", Color.error)
-      
-    case .Notice :
-      return ("Notice", Color.notice)
-      
-    case .Warning :
-      return ("Warning", Color.warning)
-      
-    case .Info :
-      return ("Info", Color.info)
+      case .Success :
+        return ("Success", Color.success)
+        
+      case .Error :
+        return ("Error", Color.error)
+        
+      case .Notice :
+        return ("Notice", Color.notice)
+        
+      case .Warning :
+        return ("Warning", Color.warning)
+        
+      case .Info :
+        return ("Info", Color.info)
     }
   }
   
