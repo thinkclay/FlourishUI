@@ -151,9 +151,14 @@ public class Modal: UIViewController
     dialog.addSubview(dismissButton)
   }
   
-  init(title: String?, body: String?, status: Status)
+  init()
   {
-    super.init()
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  convenience init(title: String?, body: String?, status: Status)
+  {
+    self.init()
     
     self.titleLabel.text = title
     self.bodyLabel.text = body
