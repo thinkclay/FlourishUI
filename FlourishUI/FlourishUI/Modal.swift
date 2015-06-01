@@ -2,25 +2,33 @@ import UIKit
 
 public class Modal: UIViewController
 {
-  private var overlay = UIVisualEffectView(effect: UIBlurEffect(style: Overlay.blurStyle))
+  private var _settings = Dialog() {
+    didSet {
+      height = _settings.height
+      bodyHeight = _settings.bodyHeight
+      overlay = UIVisualEffectView(effect: UIBlurEffect(style: _settings.overlayBlurStyle))
+    }
+  }
+  
+  private var overlay = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
   private var dialog = UIView()
   private var titleLabel = UILabel()
   private var bodyLabel = UITextView()
   private var dismissButton = ModalButton(frame: CGRect())
   private var status: Status = .Notice
   private var durationTimer: NSTimer!
-  private var bodyHeight = Dialog.bodyHeight
-  private var height = Dialog.height
+  private var bodyHeight: CGFloat = 90
+  private var height: CGFloat = 178
 
   var width: CGFloat {
-    var width = (view.frame.width - 2 * Dialog.padding)
+    var width = (view.frame.width - 2 * _settings.padding)
     
-    if Dialog.equalAspectRatio
+    if _settings.equalAspectRatio
     {
       width = width > height ? height : width
     }
     
-    return width <= Dialog.maxWidth ? width : Dialog.maxWidth
+    return width <= _settings.maxWidth ? width : _settings.maxWidth
   }
   
   public enum Status
@@ -40,33 +48,31 @@ public class Modal: UIViewController
   
   public struct Dialog
   {
-    static var backgroundColor = UIColor.whiteColor()
-    static var borderColor = UIColor.lightGrayColor()
-    static var equalAspectRatio = false
-    static var borderRadius: CGFloat = 5
-    static var borderWidth: CGFloat = 0.5
-    static var height: CGFloat = 178
-    static var maxWidth: CGFloat = 300
-    static var titleHeight: CGFloat = 40
-    static var bodyHeight: CGFloat = 90
-    static var margin: CGFloat = 20
-    static var padding: CGFloat = 20
-    static var buttonHeight: CGFloat = 40
-    static var buttonCornerRadius: Float = 3
-    static var dismissText = "Close"
+    var backgroundColor = UIColor.whiteColor()
+    var borderColor = UIColor.lightGrayColor()
+    var equalAspectRatio = false
+    var borderRadius: CGFloat = 5
+    var borderWidth: CGFloat = 0.5
+    var height: CGFloat = 178
+    var maxWidth: CGFloat = 300
+    var titleHeight: CGFloat = 40
+    var bodyHeight: CGFloat = 90
+    var margin: CGFloat = 20
+    var padding: CGFloat = 20
+    var buttonHeight: CGFloat = 40
+    var buttonCornerRadius: Float = 3
+    var dismissText = "Close"
     
     // Shadows
-    static var shadowType: Shadow = .Normal
-    static var shadowColor: UIColor = UIColor.blackColor()
-    static var shadowOffset: CGSize = CGSize(width: 0, height: 2)
-    static var shadowOpacity: Float = 0.2
-    static var shadowRadius: CGFloat = 1
-  }
-  
-  public struct Overlay
-  {
-    static var backgroundColor: UIColor = UIColor.clearColor()
-    static var blurStyle: UIBlurEffectStyle = .Light
+    var shadowType: Shadow = .Normal
+    var shadowColor: UIColor = UIColor.blackColor()
+    var shadowOffset: CGSize = CGSize(width: 0, height: 2)
+    var shadowOpacity: Float = 0.2
+    var shadowRadius: CGFloat = 1
+    
+    // Overlay
+    var overlayColor: UIColor = UIColor.clearColor()
+    var overlayBlurStyle: UIBlurEffectStyle = .Light
   }
   
   public struct Color
@@ -108,7 +114,7 @@ public class Modal: UIViewController
     // Set up main view
     view.frame = UIScreen.mainScreen().bounds
     view.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
-    view.backgroundColor = Overlay.backgroundColor
+    view.backgroundColor = _settings.overlayColor
     view.addSubview(overlay)
     
     // Overlay
@@ -117,18 +123,18 @@ public class Modal: UIViewController
     overlay.addSubview(dialog)
     
     // Dialog
-    dialog.backgroundColor = Dialog.backgroundColor
-    dialog.layer.borderColor = Dialog.borderColor.CGColor
-    dialog.layer.cornerRadius = Dialog.borderRadius
+    dialog.backgroundColor = _settings.backgroundColor
+    dialog.layer.borderColor = _settings.borderColor.CGColor
+    dialog.layer.cornerRadius = _settings.borderRadius
     dialog.layer.masksToBounds = false
-    dialog.layer.borderWidth = Dialog.borderWidth
+    dialog.layer.borderWidth = _settings.borderWidth
     
     // Title
     titleLabel.textColor = Color.title
     titleLabel.numberOfLines = 1
     titleLabel.textAlignment = .Center
     titleLabel.font = Font.header
-    titleLabel.frame = CGRect(x: Dialog.padding, y: Dialog.padding, width: width - 2 * Dialog.padding, height: Dialog.titleHeight)
+    titleLabel.frame = CGRect(x: _settings.padding, y: _settings.padding, width: width - 2 * _settings.padding, height: _settings.titleHeight)
     dialog.addSubview(titleLabel)
     
     // Body
@@ -142,7 +148,7 @@ public class Modal: UIViewController
     dialog.addSubview(bodyLabel)
     
     // Button
-    dismissButton.setTitle(Dialog.dismissText, forState: .Normal)
+    dismissButton.setTitle(_settings.dismissText, forState: .Normal)
     dismissButton.titleLabel?.font = Font.button
     dismissButton.actionType = Action.Selector
     dismissButton.target = self
@@ -151,7 +157,7 @@ public class Modal: UIViewController
     dialog.addSubview(dismissButton)
   }
   
-  convenience init(title: String?, body: String?, status: Status)
+  convenience init(title: String?, body: String?, status: Status, settings: Dialog = Dialog())
   {
     self.init()
     
@@ -181,17 +187,17 @@ public class Modal: UIViewController
     overlay.frame.size = size
     
     // Set frames
-    addShadow(dialog, shadow: Dialog.shadowType)
+    addShadow(dialog, shadow: _settings.shadowType)
     dialog.frame.size = CGSize(width: width, height: height)
     dialog.center.x = view.center.x
     dialog.center.y = view.center.y
     
-    let x = Dialog.padding
-    var y = Dialog.padding + Dialog.titleHeight
-    let w = width - (2 * Dialog.padding)
+    let x = _settings.padding
+    var y = _settings.padding + _settings.titleHeight
+    let w = width - (2 * _settings.padding)
     
     bodyLabel.frame = CGRect(x: x, y: y, width: w, height: bodyHeight)
-    dismissButton.frame = CGRect(x: x, y: y + bodyHeight + Dialog.padding, width: w, height: Dialog.buttonHeight)
+    dismissButton.frame = CGRect(x: x, y: y + bodyHeight + _settings.padding, width: w, height: _settings.buttonHeight)
     dismissButton.backgroundColor = metaForStatus(status).color
     dismissButton.layer.masksToBounds = true
   }
@@ -227,7 +233,7 @@ public class Modal: UIViewController
       let statusColor = metaForStatus(status).color
       
       // Subtitle: adjusts to text view size
-      let r = bodyLabel.text.boundingRectWithSize(CGSize(width: width - 2 * Dialog.padding, height: 90),
+      let r = bodyLabel.text.boundingRectWithSize(CGSize(width: width - 2 * _settings.padding, height: 90),
         options: .UsesLineFragmentOrigin,
         attributes: [NSFontAttributeName: Font.text],
         context: nil)
@@ -240,7 +246,7 @@ public class Modal: UIViewController
         bodyHeight = textHeight
       }
       
-      height += Dialog.buttonHeight + Dialog.padding
+      height += _settings.buttonHeight + _settings.padding
       
       if duration > 0
       {
@@ -277,10 +283,10 @@ public class Modal: UIViewController
   
   public func addShadow(view: UIView, shadow: Shadow)
   {
-    view.layer.shadowColor = Dialog.shadowColor.CGColor
-    view.layer.shadowOffset = Dialog.shadowOffset
-    view.layer.shadowOpacity = Dialog.shadowOpacity
-    view.layer.shadowRadius = Dialog.shadowRadius
+    view.layer.shadowColor = _settings.shadowColor.CGColor
+    view.layer.shadowOffset = _settings.shadowOffset
+    view.layer.shadowOpacity = _settings.shadowOpacity
+    view.layer.shadowRadius = _settings.shadowRadius
     
     switch shadow
     {

@@ -12,33 +12,38 @@ class ViewController: UIViewController
         Modal(title: sender.titleLabel?.text, body: body, status: .Success).show()
       
       case 2 :
-        Modal.Overlay.blurStyle = .ExtraLight
-        Modal.Dialog.shadowType = .Hover
-        Modal.Dialog.shadowRadius = CGFloat(5)
-        Modal.Dialog.shadowOffset = CGSize(width: 0, height: 0)
-        Modal.Dialog.shadowOpacity = 0.1
-        Modal(title: sender.titleLabel?.text, body: body, status: .Warning).show()
+        var settings = Modal.Dialog()
+        settings.backgroundColor = UIColor.whiteColor()
+        settings.shadowType = .Hover
+        settings.shadowRadius = CGFloat(5)
+        settings.shadowOffset = CGSize(width: 0, height: 0)
+        settings.shadowOpacity = 0.1
+        settings.overlayBlurStyle = .ExtraLight
+
+        Modal(title: sender.titleLabel?.text, body: body, status: .Warning, settings: settings).show()
       
       case 3 :
-        Modal.Overlay.blurStyle = .Light
-        Modal.Dialog.borderRadius = 0
-        Modal.Dialog.shadowType = .Curl
-        Modal.Dialog.shadowOffset = CGSize(width: 0, height: -3)
-        Modal(title: sender.titleLabel?.text, body: body, status: .Error).show()
-      
+        var settings = Modal.Dialog()
+        settings.borderRadius = 0
+        settings.shadowType = .Curl
+        settings.shadowOffset = CGSize(width: 0, height: -3)
+        
+        Modal(title: sender.titleLabel?.text, body: body, status: .Error, settings: settings).show()
+
       case 4 :
-        Modal.Overlay.blurStyle = .Dark
-        Modal.Overlay.backgroundColor = UIColor(red: 200/255, green: 203/255, blue: 177/255, alpha: 0.5)
-        Modal(title: sender.titleLabel?.text, body: body, status: .Notice).show()
-      
+        var settings = Modal.Dialog()
+        settings.overlayBlurStyle = .Dark
+        settings.backgroundColor = UIColor(red: 200/255, green: 203/255, blue: 177/255, alpha: 0.5)
+        Modal(title: sender.titleLabel?.text, body: body, status: .Notice, settings: settings).show()
+
       case 5 :
-        Modal.Overlay.blurStyle = .Light
-        Modal.Overlay.backgroundColor = UIColor(red: 40/255, green: 102/255, blue: 191/255, alpha: 0.25)
-        Modal.Dialog.backgroundColor = UIColor(red: 40/255, green: 102/255, blue: 191/255, alpha: 0.25)
-        Modal.Dialog.borderColor = UIColor.whiteColor()
+        var settings = Modal.Dialog()
+        settings.overlayColor = UIColor(red: 40/255, green: 102/255, blue: 191/255, alpha: 0.25)
+        settings.backgroundColor = UIColor(red: 40/255, green: 102/255, blue: 191/255, alpha: 0.25)
+        settings.borderColor = UIColor.whiteColor()
         Modal.Color.title = UIColor.whiteColor()
         Modal.Color.body = UIColor.whiteColor()
-        Modal(title: sender.titleLabel?.text, body: body, status: .Info).show()
+        Modal(title: sender.titleLabel?.text, body: body, status: .Info, settings: settings).show()
       
       default :
         Modal(title: sender.titleLabel?.text, body: body, status: .Info).show()
