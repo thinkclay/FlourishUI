@@ -13,7 +13,7 @@ This library was built on iOS 8.x, but does offer decent backwards compatibility
 
 ### Inspiration
 
-This library was hand-written, but borrowed heavily from concepts in [ZFRipple](https://github.com/zoonooz/ZFRippleButton),
+This library was hand-written, but borrowed from concepts in [ZFRipple](https://github.com/zoonooz/ZFRippleButton),
 [SLCAlertView](https://github.com/vikmeup/SCLAlertView-Swift) and [Material](http://www.google.com/design/spec/material-design/introduction.html). We'd like to thank them for paving the way for some cool concepts and for contributing their code as MIT. Following suit, we have also made this open source and completely void of Copyright or restrictions. Just use it already, and make your apps look like sexy unicorns!
 
 

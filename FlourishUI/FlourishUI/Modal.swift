@@ -2,30 +2,29 @@ import UIKit
 
 public class Modal: UIViewController
 {
-  private var _settings = Dialog() {
+  private var _settings: Settings = Settings() {
     didSet {
-      height = _settings.height
-      bodyHeight = _settings.bodyHeight
-      overlay = UIVisualEffectView(effect: UIBlurEffect(style: _settings.overlayBlurStyle))
+      _height = _settings.height
+      _bodyHeight = _settings.bodyHeight
     }
   }
   
-  private var overlay = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+  private var _overlay = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
   private var dialog = UIView()
   private var titleLabel = UILabel()
   private var bodyLabel = UITextView()
   private var dismissButton = ModalButton(frame: CGRect())
   private var status: Status = .Notice
   private var durationTimer: NSTimer!
-  private var bodyHeight: CGFloat = 90
-  private var height: CGFloat = 178
+  private var _bodyHeight: CGFloat = 90
+  private var _height: CGFloat = 178
 
   var width: CGFloat {
     var width = (view.frame.width - 2 * _settings.padding)
     
     if _settings.equalAspectRatio
     {
-      width = width > height ? height : width
+      width = width > _height ? _height : width
     }
     
     return width <= _settings.maxWidth ? width : _settings.maxWidth
@@ -46,7 +45,7 @@ public class Modal: UIViewController
     case Normal, Curl, Hover
   }
   
-  public struct Dialog
+  public struct Settings
   {
     var backgroundColor = UIColor.whiteColor()
     var borderColor = UIColor.lightGrayColor()
@@ -73,13 +72,14 @@ public class Modal: UIViewController
     // Overlay
     var overlayColor: UIColor = UIColor.clearColor()
     var overlayBlurStyle: UIBlurEffectStyle = .Light
+    
+    // Colors
+    var titleColor = UIColor.darkGrayColor()
+    var bodyColor = UIColor.grayColor()
   }
   
   public struct Color
   {
-    static var title = UIColor.darkGrayColor()
-    static var body = UIColor.grayColor()
-    
     static var success = UIColor(red: 34/255, green: 181/255, blue: 115/255, alpha: 1)
     static var error = UIColor(red: 193/255, green: 39/255, blue: 45/255, alpha: 1)
     static var notice = UIColor(red: 200/255, green: 203/255, blue: 177/255, alpha: 1)
@@ -107,20 +107,26 @@ public class Modal: UIViewController
     fatalError("NSCoding not supported")
   }
   
-  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+  init(title: String?, body: String?, status: Status, settings: Settings = Settings())
   {
-    super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
-  
+    super.init(nibName: nil, bundle: nil)
+    
+    self.titleLabel.text = title
+    self.bodyLabel.text = body
+    self.status = status
+    self._settings = settings
+    self._overlay = UIVisualEffectView(effect: UIBlurEffect(style: _settings.overlayBlurStyle))
+    
     // Set up main view
     view.frame = UIScreen.mainScreen().bounds
     view.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
     view.backgroundColor = _settings.overlayColor
-    view.addSubview(overlay)
+    view.addSubview(_overlay)
     
     // Overlay
-    overlay.frame = view.frame
-    overlay.autoresizingMask = .FlexibleHeight | .FlexibleWidth
-    overlay.addSubview(dialog)
+    _overlay.frame = view.frame
+    _overlay.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+    _overlay.addSubview(dialog)
     
     // Dialog
     dialog.backgroundColor = _settings.backgroundColor
@@ -130,7 +136,7 @@ public class Modal: UIViewController
     dialog.layer.borderWidth = _settings.borderWidth
     
     // Title
-    titleLabel.textColor = Color.title
+    titleLabel.textColor = _settings.titleColor
     titleLabel.numberOfLines = 1
     titleLabel.textAlignment = .Center
     titleLabel.font = Font.header
@@ -139,7 +145,7 @@ public class Modal: UIViewController
     
     // Body
     bodyLabel.backgroundColor = UIColor.clearColor()
-    bodyLabel.textColor = Color.body
+    bodyLabel.textColor = _settings.bodyColor
     bodyLabel.editable = false
     bodyLabel.textAlignment = .Center
     bodyLabel.textContainerInset = UIEdgeInsetsZero
@@ -155,15 +161,6 @@ public class Modal: UIViewController
     dismissButton.selector = Selector("hide")
     dismissButton.addTarget(self, action: Selector("buttonTapped:"), forControlEvents: .TouchUpInside)
     dialog.addSubview(dismissButton)
-  }
-  
-  convenience init(title: String?, body: String?, status: Status, settings: Dialog = Dialog())
-  {
-    self.init()
-    
-    self.titleLabel.text = title
-    self.bodyLabel.text = body
-    self.status = status
   }
   
   
@@ -184,11 +181,11 @@ public class Modal: UIViewController
     
     // Set background frame
     view.frame.size = size
-    overlay.frame.size = size
+    _overlay.frame.size = size
     
     // Set frames
     addShadow(dialog, shadow: _settings.shadowType)
-    dialog.frame.size = CGSize(width: width, height: height)
+    dialog.frame.size = CGSize(width: width, height: _height)
     dialog.center.x = view.center.x
     dialog.center.y = view.center.y
     
@@ -196,8 +193,8 @@ public class Modal: UIViewController
     var y = _settings.padding + _settings.titleHeight
     let w = width - (2 * _settings.padding)
     
-    bodyLabel.frame = CGRect(x: x, y: y, width: w, height: bodyHeight)
-    dismissButton.frame = CGRect(x: x, y: y + bodyHeight + _settings.padding, width: w, height: _settings.buttonHeight)
+    bodyLabel.frame = CGRect(x: x, y: y, width: w, height: _bodyHeight)
+    dismissButton.frame = CGRect(x: x, y: y + _bodyHeight + _settings.padding, width: w, height: _settings.buttonHeight)
     dismissButton.backgroundColor = metaForStatus(status).color
     dismissButton.layer.masksToBounds = true
   }
@@ -227,7 +224,7 @@ public class Modal: UIViewController
     {
       rv.addSubview(view)
       view.frame = rv.bounds
-      overlay.frame = rv.bounds
+      _overlay.frame = rv.bounds
     
       // Dialog color scheme
       let statusColor = metaForStatus(status).color
@@ -240,13 +237,13 @@ public class Modal: UIViewController
       
       let textHeight = ceil(r.size.height)
       
-      if textHeight < bodyHeight
+      if textHeight < _bodyHeight
       {
-        height -= (bodyHeight - textHeight)
-        bodyHeight = textHeight
+        _height -= (_bodyHeight - textHeight)
+        _bodyHeight = textHeight
       }
       
-      height += _settings.buttonHeight + _settings.padding
+      _height += _settings.buttonHeight + _settings.padding
       
       if duration > 0
       {
@@ -353,7 +350,7 @@ public class Modal: UIViewController
   
   private func addHoverShadow(view: UIView)
   {
-    var ovalRect = CGRect(x: 10, y: height + 15, width: width - 20, height: 15)
+    var ovalRect = CGRect(x: 10, y: _height + 15, width: width - 20, height: 15)
     var path = UIBezierPath(roundedRect: ovalRect, cornerRadius: 10)
     
     view.layer.shadowPath = path.CGPath
