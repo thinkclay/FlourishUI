@@ -151,11 +151,6 @@ public class Modal: UIViewController
     dialog.addSubview(dismissButton)
   }
   
-  init()
-  {
-    super.init(nibName: nil, bundle: nil)
-  }
-  
   convenience init(title: String?, body: String?, status: Status)
   {
     self.init()
