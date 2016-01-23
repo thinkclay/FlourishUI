@@ -5,26 +5,18 @@
 [![License](https://img.shields.io/cocoapods/l/FlourishUI.svg?style=flat)](http://cocoapods.org/pods/FlourishUI)
 [![Platform](https://img.shields.io/cocoapods/p/FlourishUI.svg?style=flat)](http://cocoapods.org/pods/FlourishUI)
 
+<img src="https://raw.githubusercontent.com/unicorn/FlourishUI/2.0/Preview.gif" alt="Preview of UI" align="right" />
+
+We absolutely **love** beautiful interfaces! As an organization named Unicorn, we are obligated to be unique and majestic. That is why we have made this highly configurable, out-of-the-box-pretty, User Interface library/kit thingy. It has a minimal set of UI components now, but already packs quite a punch with the UIColor extension, animated Material-inspired buttons, and modal views.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
 
-## Installation
 
-FlourishUI is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
 
-```ruby
-pod "FlourishUI"
-```
 
-# FlourishUI
-
-<img src="https://raw.githubusercontent.com/unicorn/FlourishUI/2.0/Preview.gif" alt="Preview of UI" align="right" />
-
-We absolutely **love** beautiful interfaces! As an organization named Unicorn, we are obligated to be unique and majestic. That is why we have made this highly configurable, out-of-the-box-pretty, User Interface library/kit thingy. It has a minimal set of UI components now, but already packs quite a punch with the UIColor extension, animated Material-inspired buttons, and modal views.
 
 ***Release Notes***
 
@@ -41,11 +33,18 @@ This library was hand-written, but borrowed from concepts in [ZFRipple](https://
 
 ## Installation
 
-Easy, just drap and drop the FlourishUI folder (or individual files) into your project and start using!
+FlourishUI is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod "FlourishUI"
+```
+
+Or if you prefer to skip cocoapods, you can simply drag and drop the [source files](https://github.com/thinkclay/FlourishUI/tree/master/Pod/Classes) directly into your Xcode project.
+
 
 ## Usage
 
-Most of the code should be pretty self documenting. FlourishUI uses structs and enums heavily to make an easy-to-read and highly meta approach.
+Most of the code should be pretty self documenting. FlourishUI uses structs and enums heavily to make an easy-to-read and highly meta approach. Future updates will probably keep the API mostly the same, but switch to a better underlying infrastructure of getters and setters.
 
 ### Button
 
@@ -68,8 +67,6 @@ Modal(title: sender.titleLabel?.text, body: body, status: .Warning).show()
 ```
 
 ### UIColor Extension
-
-You would think Apple would just drop in support for little utilities like these, but alas, we've recreated them:
 
 ```swift
 // Create colors with hex value in string
