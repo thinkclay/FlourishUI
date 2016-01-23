@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FlourishUI_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FlourishUI Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfz-cj-w7Y">
+                                <rect key="frame" x="16" y="28" width="568" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.38375306129999998" green="0.19593107700000001" blue="0.71045380830000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwK-u1-pi9" customClass="Button" customModule="FlourishUI_Example" customModuleProvider="target">
+                                <rect key="frame" x="16" y="81" width="568" height="40"/>
+                                <color key="backgroundColor" red="0.30014234779999999" green="0.76199322940000003" blue="0.66093891859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZXG-S2-Y3t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Success: Default">
+                                    <color key="titleColor" red="0.082352943720000002" green="0.4313725531" blue="0.36862745879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showModalExamples:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ymP-0R-f1e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhQ-K8-LvS" customClass="Button" customModule="FlourishUI_Example" customModuleProvider="target">
+                                <rect key="frame" x="16" y="129" width="568" height="40"/>
+                                <color key="backgroundColor" red="0.76199322940000003" green="0.70811062654666668" blue="0.30014234779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3QH-aL-CeU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Warning: Extra Light, Hover">
+                                    <color key="titleColor" red="0.4313725531" green="0.33830065726533332" blue="0.082352943719999988" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showModalExamples:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2t9-8Y-bNH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlY-sr-cgc" customClass="Button" customModule="FlourishUI_Example" customModuleProvider="target">
+                                <rect key="frame" x="16" y="177" width="568" height="40"/>
+                                <color key="backgroundColor" red="0.76199322940000003" green="0.46948767105333328" blue="0.30014234779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bon-UM-Q2q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Error: Light, Curl">
+                                    <color key="titleColor" red="0.4313725531" green="0.20450980700299995" blue="0.082352943719999988" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showModalExamples:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9BS-8P-K25"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-Nw-5wb" customClass="Button" customModule="FlourishUI_Example" customModuleProvider="target">
+                                <rect key="frame" x="16" y="225" width="568" height="40"/>
+                                <color key="backgroundColor" red="0.82003999999999999" green="0.82999999999999996" blue="0.73039999999999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="37e-Cs-orP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Notice: Dark, Cream">
+                                    <color key="titleColor" red="0.44" green="0.41888000000000003" blue="0.28160000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showModalExamples:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fNE-Fc-DlB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7G-Mm-eI6" customClass="Button" customModule="FlourishUI_Example" customModuleProvider="target">
+                                <rect key="frame" x="16" y="273" width="568" height="40"/>
+                                <color key="backgroundColor" red="0.52800000000000002" green="0.72160000000000024" blue="0.88" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="07m-ph-88j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Info: Way too blue">
+                                    <color key="titleColor" red="0.29699999999999999" green="0.32724999999999987" blue="0.66000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showModalExamples:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Cgv-P7-Joa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This is input text with custom padding!" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuT-0e-DOw" customClass="InputText" customModule="FlourishUI_Example" customModuleProvider="target">
+                                <rect key="frame" x="16" y="353" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jTd-TZ-e6s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="padding">
+                                        <size key="value" width="15" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93000000000000005" green="0.91698000000000024" blue="0.89280000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PlY-sr-cgc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="1LW-4V-mtS"/>
+                            <constraint firstItem="Tfz-cj-w7Y" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="1ZO-Iz-LfZ"/>
+                            <constraint firstItem="KhQ-K8-LvS" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="2Yn-Cd-ltj"/>
+                            <constraint firstItem="PlY-sr-cgc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="3TK-ES-JkM"/>
+                            <constraint firstItem="k7G-Mm-eI6" firstAttribute="top" secondItem="ugL-Nw-5wb" secondAttribute="bottom" constant="8" id="819-tY-lGV"/>
+                            <constraint firstItem="KhQ-K8-LvS" firstAttribute="top" secondItem="rwK-u1-pi9" secondAttribute="bottom" constant="8" id="8a7-Vb-PKi"/>
+                            <constraint firstItem="k7G-Mm-eI6" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="CcJ-yu-dMF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rwK-u1-pi9" secondAttribute="trailing" id="FfD-PQ-gAB"/>
+                            <constraint firstItem="ugL-Nw-5wb" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Idu-ni-xN8"/>
+                            <constraint firstItem="ugL-Nw-5wb" firstAttribute="top" secondItem="PlY-sr-cgc" secondAttribute="bottom" constant="8" id="PHH-4K-pAt"/>
+                            <constraint firstItem="k7G-Mm-eI6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="SD8-Fq-PHW"/>
+                            <constraint firstItem="ugL-Nw-5wb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Udi-pK-mlq"/>
+                            <constraint firstAttribute="centerX" secondItem="rwK-u1-pi9" secondAttribute="centerX" id="bOf-QX-tUl"/>
+                            <constraint firstItem="KhQ-K8-LvS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="cYQ-e1-WD0"/>
+                            <constraint firstItem="Tfz-cj-w7Y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="epG-TR-mhR"/>
+                            <constraint firstItem="rwK-u1-pi9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fMC-HB-wbY"/>
+                            <constraint firstItem="rwK-u1-pi9" firstAttribute="top" secondItem="Tfz-cj-w7Y" secondAttribute="bottom" constant="20" id="gZh-IE-OAY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RuT-0e-DOw" secondAttribute="trailing" id="iKa-4D-Ixu"/>
+                            <constraint firstItem="RuT-0e-DOw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="kuX-bv-48p"/>
+                            <constraint firstItem="PlY-sr-cgc" firstAttribute="top" secondItem="KhQ-K8-LvS" secondAttribute="bottom" constant="8" id="mc8-3q-fWD"/>
+                            <constraint firstItem="RuT-0e-DOw" firstAttribute="top" secondItem="k7G-Mm-eI6" secondAttribute="bottom" constant="40" id="q1a-QO-icY"/>
+                            <constraint firstItem="Tfz-cj-w7Y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="y5T-7t-pQ5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

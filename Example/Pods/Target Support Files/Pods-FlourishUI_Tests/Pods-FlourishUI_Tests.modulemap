@@ -1,0 +1,6 @@
+framework module Pods_FlourishUI_Tests {
+  umbrella header "Pods-FlourishUI_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

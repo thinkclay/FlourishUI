@@ -1,15 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'FlourishUI_Example', :exclusive => true do
+target 'FlourishUI_Example' do
   pod "FlourishUI", :path => "../"
 end
 
-target 'FlourishUI_Tests', :exclusive => true do
+target 'FlourishUI_Tests' do
   pod "FlourishUI", :path => "../"
-
-  pod 'Quick', '~> 0.8.0'
-  pod 'Nimble', '3.0.0'
-  pod 'FBSnapshotTestCase'
-  pod 'Nimble-Snapshots'
 end
