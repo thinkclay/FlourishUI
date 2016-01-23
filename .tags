@@ -1,0 +1,73 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+language	/Users/clay/Projects/swift/FlourishUI/.travis.yml	/^language: objective-c$/;"	function	line:5
+script	/Users/clay/Projects/swift/FlourishUI/.travis.yml	/^script:$/;"	function	line:11
+images	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^  "images" : [$/;"	function	line:2
+idiom	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:4
+size	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "29x29",$/;"	function	line:5
+scale	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:6
+idiom	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:9
+size	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "29x29",$/;"	function	line:10
+scale	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "3x"$/;"	function	line:11
+idiom	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:14
+size	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "40x40",$/;"	function	line:15
+scale	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:16
+idiom	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:19
+size	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "40x40",$/;"	function	line:20
+scale	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "3x"$/;"	function	line:21
+idiom	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:24
+size	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "60x60",$/;"	function	line:25
+scale	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:26
+idiom	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:29
+size	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "60x60",$/;"	function	line:30
+scale	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "3x"$/;"	function	line:31
+info	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^  "info" : {$/;"	function	line:34
+version	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^    "version" : 1,$/;"	function	line:35
+author	/Users/clay/Projects/swift/FlourishUI/Example/FlourishUI/Images.xcassets/AppIcon.appiconset/Contents.json	/^    "author" : "xcode"$/;"	function	line:36
+name	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "name": "FlourishUI",$/;"	function	line:2
+version	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "version": "2.1.0",$/;"	function	line:3
+summary	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "summary": "FlourishUI is a nice clean user interface framework",$/;"	function	line:4
+description	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "description": "FlourishUI is a user interface framework for making good looking iOS applications",$/;"	function	line:5
+homepage	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "homepage": "https:\/\/github.com\/thinkclay\/FlourishUI",$/;"	function	line:6
+license	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "license": "MIT",$/;"	function	line:7
+authors	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "authors": {$/;"	function	line:8
+Clay McIlrath	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^    "Clay McIlrath": "clay.mcilrath@gmail.com"$/;"	function	line:9
+source	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "source": {$/;"	function	line:11
+git	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^    "git": "https:\/\/github.com\/thinkclay\/FlourishUI.git",$/;"	function	line:12
+tag	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^    "tag": "2.1.0"$/;"	function	line:13
+platforms	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "platforms": {$/;"	function	line:15
+ios	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^    "ios": "8.0"$/;"	function	line:16
+requires_arc	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "requires_arc": true,$/;"	function	line:18
+source_files	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "source_files": "Pod\/Classes\/**\/*",$/;"	function	line:19
+resource_bundles	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^  "resource_bundles": {$/;"	function	line:20
+FlourishUI	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Local Podspecs/FlourishUI.podspec.json	/^    "FlourishUI": [$/;"	function	line:21
+FlourishUIVersionNumber	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/FlourishUI/FlourishUI-umbrella.h	/^FOUNDATION_EXPORT double FlourishUIVersionNumber;$/;"	variable	line:4
+FlourishUIVersionString	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/FlourishUI/FlourishUI-umbrella.h	/^FOUNDATION_EXPORT const unsigned char FlourishUIVersionString[];$/;"	variable	line:5
+Acknowledgements	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-acknowledgements.markdown	/^# Acknowledgements$/;"	function	line:1
+FlourishUI	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-acknowledgements.markdown	/^## FlourishUI$/;"	function	line:4
+install_framework	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-frameworks.sh	/^install_framework()$/;"	function	line:9
+code_sign_if_enabled	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-frameworks.sh	/^code_sign_if_enabled() {$/;"	function	line:58
+strip_invalid_archs	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-frameworks.sh	/^strip_invalid_archs() {$/;"	function	line:68
+realpath	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-resources.sh	/^realpath() {$/;"	function	line:11
+install_resource	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-resources.sh	/^install_resource()$/;"	function	line:17
+Pods_FlourishUI_ExampleVersionNumber	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-umbrella.h	/^FOUNDATION_EXPORT double Pods_FlourishUI_ExampleVersionNumber;$/;"	variable	line:4
+Pods_FlourishUI_ExampleVersionString	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Example/Pods-FlourishUI_Example-umbrella.h	/^FOUNDATION_EXPORT const unsigned char Pods_FlourishUI_ExampleVersionString[];$/;"	variable	line:5
+Acknowledgements	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-acknowledgements.markdown	/^# Acknowledgements$/;"	function	line:1
+FlourishUI	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-acknowledgements.markdown	/^## FlourishUI$/;"	function	line:4
+install_framework	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-frameworks.sh	/^install_framework()$/;"	function	line:9
+code_sign_if_enabled	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-frameworks.sh	/^code_sign_if_enabled() {$/;"	function	line:58
+strip_invalid_archs	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-frameworks.sh	/^strip_invalid_archs() {$/;"	function	line:68
+realpath	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-resources.sh	/^realpath() {$/;"	function	line:11
+install_resource	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-resources.sh	/^install_resource()$/;"	function	line:17
+Pods_FlourishUI_TestsVersionNumber	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-umbrella.h	/^FOUNDATION_EXPORT double Pods_FlourishUI_TestsVersionNumber;$/;"	variable	line:4
+Pods_FlourishUI_TestsVersionString	/Users/clay/Projects/swift/FlourishUI/Example/Pods/Target Support Files/Pods-FlourishUI_Tests/Pods-FlourishUI_Tests-umbrella.h	/^FOUNDATION_EXPORT const unsigned char Pods_FlourishUI_TestsVersionString[];$/;"	variable	line:5
+FlourishUI	/Users/clay/Projects/swift/FlourishUI/README.md	/^# FlourishUI$/;"	function	line:1
+Usage	/Users/clay/Projects/swift/FlourishUI/README.md	/^## Usage$/;"	function	line:8
+Requirements	/Users/clay/Projects/swift/FlourishUI/README.md	/^## Requirements$/;"	function	line:12
+Installation	/Users/clay/Projects/swift/FlourishUI/README.md	/^## Installation$/;"	function	line:14
+Author	/Users/clay/Projects/swift/FlourishUI/README.md	/^## Author$/;"	function	line:23
+License	/Users/clay/Projects/swift/FlourishUI/README.md	/^## License$/;"	function	line:27

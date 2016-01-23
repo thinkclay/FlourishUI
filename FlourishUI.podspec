@@ -1,32 +1,14 @@
-#
-# Be sure to run `pod lib lint FlourishUI.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "FlourishUI"
   s.version          = "2.1.0"
   s.summary          = "FlourishUI is a nice clean user interface framework"
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-    FlourishUI is a user interface framework for making good looking iOS applications
-                       DESC
-
+  s.description      = "FlourishUI is a UI framework for quickly and easily making good looking iOS components."
   s.homepage         = "https://github.com/thinkclay/FlourishUI"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Clay McIlrath" => "clay.mcilrath@gmail.com" }
   s.source           = { :git => "https://github.com/thinkclay/FlourishUI.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.social_media_url = 'https://twitter.com/thinkclay'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
@@ -34,8 +16,4 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'FlourishUI' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
