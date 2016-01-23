@@ -1,6 +1,6 @@
 {
   "name": "FlourishUI",
-  "version": "0.1.0",
+  "version": "2.1.0",
   "summary": "FlourishUI is a nice clean user interface framework",
   "description": "FlourishUI is a user interface framework for making good looking iOS applications",
   "homepage": "https://github.com/thinkclay/FlourishUI",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/thinkclay/FlourishUI.git",
-    "tag": "0.1.0"
+    "tag": "2.1.0"
   },
   "platforms": {
     "ios": "8.0"

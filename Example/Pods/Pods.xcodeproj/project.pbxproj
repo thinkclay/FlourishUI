@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00585BE5F3340BCD1318A8E6C02A546F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
-		09544986D5B15CFA7104B8C74EB0E490 /* FlourishUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B41984558661C395B931BF5759619AB3 /* FlourishUI-dummy.m */; };
+		1845DC4DDCDA7C782037109AE12A043C /* InputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F084ED9F417A6F5B007162A44B77C2FB /* InputText.swift */; };
+		43813CC7F074C7CB36B3D8CFB6646AC9 /* FlourishUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72E14E18DC7340DF461D575CE606C8E6 /* FlourishUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51911BC335E266AF0EAA433209EECE43 /* Pods-FlourishUI_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 477BE24D7EEBD8BB48131D87D3BE1D6C /* Pods-FlourishUI_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A4212D4341A3A2C84ED9A90DEB66A55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
-		6F7A7AD81C5337FF004BAAFD /* InputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7A7AD41C5337FF004BAAFD /* InputText.swift */; };
-		6F7A7AD91C5337FF004BAAFD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7A7AD51C5337FF004BAAFD /* Button.swift */; };
-		6F7A7ADA1C5337FF004BAAFD /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7A7AD61C5337FF004BAAFD /* Modal.swift */; };
-		6F7A7ADB1C5337FF004BAAFD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7A7AD71C5337FF004BAAFD /* UIColor.swift */; };
 		6FA102001FD23C72E20F8793A6D18856 /* Pods-FlourishUI_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD825C082557220DCA82CCFBCCE171E7 /* Pods-FlourishUI_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73E3D6DA096AFD16812AE3B14910B8CE /* FlourishUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4326120A0C1B04F418482EDD8D4A9EC5 /* FlourishUI.bundle */; };
+		8C798947AB448B83D3650788881D63CB /* FlourishUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4326120A0C1B04F418482EDD8D4A9EC5 /* FlourishUI.bundle */; };
 		94292B1508F489120F1B04EB5989F778 /* Pods-FlourishUI_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DBFCDCE95FB2DFB5F76A6E0E3DB652 /* Pods-FlourishUI_Tests-dummy.m */; };
-		98AE3B0B94E5237D320F8D7F111ECDDE /* FlourishUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72E14E18DC7340DF461D575CE606C8E6 /* FlourishUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FC0A904B59691F805F4F881D4CE897A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
+		A44BBA668719BFD9018282A3722E56C2 /* FlourishUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B41984558661C395B931BF5759619AB3 /* FlourishUI-dummy.m */; };
 		B1B2FCF9D6601917210A3B09D4F0EE04 /* Pods-FlourishUI_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FE8E66EF83D6EBCCCFB434356201A1 /* Pods-FlourishUI_Example-dummy.m */; };
+		C14492F3FD177BEFE9ADC9925A6F90B5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1F33BDDC80E7001B7BC6BA3055E98D /* Button.swift */; };
+		EF5B675F3A1666D52EFE8AAEE8216FDA /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5B9DD56A04186E56AE4BA4B929B9C /* Modal.swift */; };
+		F073329E27CA9C44A23C5415B0261ABB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4010ED2F35C8BBCB4267182E485938E /* UIColor.swift */; };
+		FCFE22BDCAF9B6FAC85BB236F0D5A1AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +28,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A12D82E68CE77C1D4542475D9075F780;
+			remoteGlobalIDString = 71AD24E1005B528B8AD2A22053560ED7;
 			remoteInfo = FlourishUI;
 		};
 		22C950EA1A9D43DDACB74C8EC18181DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A12D82E68CE77C1D4542475D9075F780;
+			remoteGlobalIDString = 71AD24E1005B528B8AD2A22053560ED7;
 			remoteInfo = FlourishUI;
 		};
-		B212E529643D02B72FB65513E834FA7F /* PBXContainerItemProxy */ = {
+		22E33D797E656E686F7EBA110EDDB042 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 66D192C7BF53AAA8E6D0CA0EDF705521;
+			remoteGlobalIDString = 628215558E5F3719B4D5AC4D4B7C5165;
 			remoteInfo = "FlourishUI-FlourishUI";
 		};
 /* End PBXContainerItemProxy section */
@@ -51,6 +51,7 @@
 		00FE8E66EF83D6EBCCCFB434356201A1 /* Pods-FlourishUI_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlourishUI_Example-dummy.m"; sourceTree = "<group>"; };
 		0E618F5BCA2D6CCCE71E1010822A5340 /* Pods-FlourishUI_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlourishUI_Example-resources.sh"; sourceTree = "<group>"; };
 		1987AFE75B788B46FAE98B32C1AF3EAE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC5B9DD56A04186E56AE4BA4B929B9C /* Modal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3E95C60FC11F7C9CAEF48636747D59F3 /* Pods-FlourishUI_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlourishUI_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3F62854F94FA322C24D6923FDDDAF577 /* Pods-FlourishUI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlourishUI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,10 +64,6 @@
 		552088DDC34C898C1C4694C4196E1A57 /* FlourishUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlourishUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DBFCDCE95FB2DFB5F76A6E0E3DB652 /* Pods-FlourishUI_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlourishUI_Tests-dummy.m"; sourceTree = "<group>"; };
 		6A07DF211D14C28BD702B9A4DC603196 /* Pods_FlourishUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlourishUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F7A7AD41C5337FF004BAAFD /* InputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputText.swift; sourceTree = "<group>"; };
-		6F7A7AD51C5337FF004BAAFD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		6F7A7AD61C5337FF004BAAFD /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
-		6F7A7AD71C5337FF004BAAFD /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		72E14E18DC7340DF461D575CE606C8E6 /* FlourishUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlourishUI-umbrella.h"; sourceTree = "<group>"; };
 		7992A77D3BFC605D7F9CCA0F127A44EA /* FlourishUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlourishUI-prefix.pch"; sourceTree = "<group>"; };
 		8F3921ABC2E94B744A54D6519E6DCD94 /* FlourishUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FlourishUI.modulemap; sourceTree = "<group>"; };
@@ -81,25 +78,20 @@
 		B41984558661C395B931BF5759619AB3 /* FlourishUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlourishUI-dummy.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C2C4A5F7AD00026E4D368F0E1EB0FAA4 /* Pods_FlourishUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlourishUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4010ED2F35C8BBCB4267182E485938E /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E035C137C8BC0019E8EB423D2403056B /* Pods-FlourishUI_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FlourishUI_Tests.modulemap"; sourceTree = "<group>"; };
 		E4CD32076961FA1B4F2ED6D4381422EF /* Pods-FlourishUI_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlourishUI_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F084ED9F417A6F5B007162A44B77C2FB /* InputText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InputText.swift; sourceTree = "<group>"; };
 		F47D68629F37F285220781B599693CA9 /* ResourceBundle-FlourishUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-FlourishUI-Info.plist"; sourceTree = "<group>"; };
+		FD1F33BDDC80E7001B7BC6BA3055E98D /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FD825C082557220DCA82CCFBCCE171E7 /* Pods-FlourishUI_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlourishUI_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		05F37833E340F8A8C4E6482877CF9D90 /* Frameworks */ = {
+		25B6B1B88954D3E4672FFF6F85CBC239 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FE4231E4DEB634074A794F62FC1C9C5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00585BE5F3340BCD1318A8E6C02A546F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,9 +111,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EE8DC23C58E1490E37D0B5542F3F5106 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFE22BDCAF9B6FAC85BB236F0D5A1AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07411180E2ABBA56FDECAB9B07F69F4B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F00C0CFA15FFA5F423454CA3936835E9 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
 		112C7921E3A497328D11F4930CBBC9CA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,14 +168,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		806F11EC14CA4A4D683DF0F3E9061E99 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				F4D8C08258238DA653D66CDF923C8B48 /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		8A9C25901FEB38BE2AE1796B4AFF36E0 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +198,7 @@
 		A851BC4401003121760A1B857D995291 /* FlourishUI */ = {
 			isa = PBXGroup;
 			children = (
-				806F11EC14CA4A4D683DF0F3E9061E99 /* Pod */,
+				07411180E2ABBA56FDECAB9B07F69F4B /* Pod */,
 				B3AAC6B9D31E438736A088A0BF482CC7 /* Support Files */,
 			);
 			name = FlourishUI;
@@ -246,13 +246,13 @@
 			path = "Target Support Files/Pods-FlourishUI_Tests";
 			sourceTree = "<group>";
 		};
-		F4D8C08258238DA653D66CDF923C8B48 /* Classes */ = {
+		F00C0CFA15FFA5F423454CA3936835E9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6F7A7AD41C5337FF004BAAFD /* InputText.swift */,
-				6F7A7AD51C5337FF004BAAFD /* Button.swift */,
-				6F7A7AD61C5337FF004BAAFD /* Modal.swift */,
-				6F7A7AD71C5337FF004BAAFD /* UIColor.swift */,
+				FD1F33BDDC80E7001B7BC6BA3055E98D /* Button.swift */,
+				F084ED9F417A6F5B007162A44B77C2FB /* InputText.swift */,
+				1BC5B9DD56A04186E56AE4BA4B929B9C /* Modal.swift */,
+				D4010ED2F35C8BBCB4267182E485938E /* UIColor.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -260,6 +260,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0A98BACF1ABB0F7E71419AF4D3A5DA52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43813CC7F074C7CB36B3D8CFB6646AC9 /* FlourishUI-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		658B9C487607C55E0269CF918F02D8A6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,24 +284,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB097833A8BC73D3A546CE9CD39C4DBB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98AE3B0B94E5237D320F8D7F111ECDDE /* FlourishUI-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		66D192C7BF53AAA8E6D0CA0EDF705521 /* FlourishUI-FlourishUI */ = {
+		628215558E5F3719B4D5AC4D4B7C5165 /* FlourishUI-FlourishUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7082EF4ED09F0C7B1B3A4BB8B80F05A1 /* Build configuration list for PBXNativeTarget "FlourishUI-FlourishUI" */;
+			buildConfigurationList = 1A0247048F4838EA10204F853691F249 /* Build configuration list for PBXNativeTarget "FlourishUI-FlourishUI" */;
 			buildPhases = (
-				84BB667C515204D323469F10522C8300 /* Sources */,
-				05F37833E340F8A8C4E6482877CF9D90 /* Frameworks */,
-				C16003BA76426A9E9A237E8DBC229E79 /* Resources */,
+				2C3B381FA7E0A9F0B9597B1EA8A5E866 /* Sources */,
+				25B6B1B88954D3E4672FFF6F85CBC239 /* Frameworks */,
+				27C2853B229DDC5268990EEA5EC2B34E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +303,25 @@
 			productName = "FlourishUI-FlourishUI";
 			productReference = 4326120A0C1B04F418482EDD8D4A9EC5 /* FlourishUI.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		71AD24E1005B528B8AD2A22053560ED7 /* FlourishUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CB8C05ECCAFD76133C05F8AEFABE86B /* Build configuration list for PBXNativeTarget "FlourishUI" */;
+			buildPhases = (
+				AA64F0A32E85004A3584FB6BA98FFB7A /* Sources */,
+				EE8DC23C58E1490E37D0B5542F3F5106 /* Frameworks */,
+				490569BBD60D577541B4D242E8399AC6 /* Resources */,
+				0A98BACF1ABB0F7E71419AF4D3A5DA52 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CF725553E090C64E8AB1B6539DCD2FA /* PBXTargetDependency */,
+			);
+			name = FlourishUI;
+			productName = FlourishUI;
+			productReference = 552088DDC34C898C1C4694C4196E1A57 /* FlourishUI.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		9E4162F8B5EACC109629B468516763EA /* Pods-FlourishUI_Example */ = {
 			isa = PBXNativeTarget;
@@ -320,25 +339,6 @@
 			name = "Pods-FlourishUI_Example";
 			productName = "Pods-FlourishUI_Example";
 			productReference = C2C4A5F7AD00026E4D368F0E1EB0FAA4 /* Pods_FlourishUI_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A12D82E68CE77C1D4542475D9075F780 /* FlourishUI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BC5866FA23011E790E8E4D8D312D25B1 /* Build configuration list for PBXNativeTarget "FlourishUI" */;
-			buildPhases = (
-				62B8A6903F13B34A8E54DEADBA9B1AED /* Sources */,
-				6FE4231E4DEB634074A794F62FC1C9C5 /* Frameworks */,
-				0CCC66AB248B899D14D6E182376474B3 /* Resources */,
-				AB097833A8BC73D3A546CE9CD39C4DBB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				20C995A68BF3D38C212DA6FEF74619C9 /* PBXTargetDependency */,
-			);
-			name = FlourishUI;
-			productName = FlourishUI;
-			productReference = 552088DDC34C898C1C4694C4196E1A57 /* FlourishUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DBDE47919DC6FEFD8459F0B6F24A2689 /* Pods-FlourishUI_Tests */ = {
@@ -380,8 +380,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A12D82E68CE77C1D4542475D9075F780 /* FlourishUI */,
-				66D192C7BF53AAA8E6D0CA0EDF705521 /* FlourishUI-FlourishUI */,
+				71AD24E1005B528B8AD2A22053560ED7 /* FlourishUI */,
+				628215558E5F3719B4D5AC4D4B7C5165 /* FlourishUI-FlourishUI */,
 				9E4162F8B5EACC109629B468516763EA /* Pods-FlourishUI_Example */,
 				DBDE47919DC6FEFD8459F0B6F24A2689 /* Pods-FlourishUI_Tests */,
 			);
@@ -389,18 +389,18 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0CCC66AB248B899D14D6E182376474B3 /* Resources */ = {
+		27C2853B229DDC5268990EEA5EC2B34E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E3D6DA096AFD16812AE3B14910B8CE /* FlourishUI.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C16003BA76426A9E9A237E8DBC229E79 /* Resources */ = {
+		490569BBD60D577541B4D242E8399AC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C798947AB448B83D3650788881D63CB /* FlourishUI.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,22 +415,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62B8A6903F13B34A8E54DEADBA9B1AED /* Sources */ = {
+		2C3B381FA7E0A9F0B9597B1EA8A5E866 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09544986D5B15CFA7104B8C74EB0E490 /* FlourishUI-dummy.m in Sources */,
-				6F7A7AD91C5337FF004BAAFD /* Button.swift in Sources */,
-				6F7A7AD81C5337FF004BAAFD /* InputText.swift in Sources */,
-				6F7A7ADA1C5337FF004BAAFD /* Modal.swift in Sources */,
-				6F7A7ADB1C5337FF004BAAFD /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84BB667C515204D323469F10522C8300 /* Sources */ = {
+		AA64F0A32E85004A3584FB6BA98FFB7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14492F3FD177BEFE9ADC9925A6F90B5 /* Button.swift in Sources */,
+				A44BBA668719BFD9018282A3722E56C2 /* FlourishUI-dummy.m in Sources */,
+				1845DC4DDCDA7C782037109AE12A043C /* InputText.swift in Sources */,
+				EF5B675F3A1666D52EFE8AAEE8216FDA /* Modal.swift in Sources */,
+				F073329E27CA9C44A23C5415B0261ABB /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,25 +448,25 @@
 		0F1689EBD21934895DF63507F28041F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FlourishUI;
-			target = A12D82E68CE77C1D4542475D9075F780 /* FlourishUI */;
+			target = 71AD24E1005B528B8AD2A22053560ED7 /* FlourishUI */;
 			targetProxy = 18CE7DEB9F27F500AD0CD5594CDA5EC2 /* PBXContainerItemProxy */;
-		};
-		20C995A68BF3D38C212DA6FEF74619C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "FlourishUI-FlourishUI";
-			target = 66D192C7BF53AAA8E6D0CA0EDF705521 /* FlourishUI-FlourishUI */;
-			targetProxy = B212E529643D02B72FB65513E834FA7F /* PBXContainerItemProxy */;
 		};
 		3D0D32F1F045DEF3AF96F7CF79E42263 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FlourishUI;
-			target = A12D82E68CE77C1D4542475D9075F780 /* FlourishUI */;
+			target = 71AD24E1005B528B8AD2A22053560ED7 /* FlourishUI */;
 			targetProxy = 22C950EA1A9D43DDACB74C8EC18181DA /* PBXContainerItemProxy */;
+		};
+		4CF725553E090C64E8AB1B6539DCD2FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FlourishUI-FlourishUI";
+			target = 628215558E5F3719B4D5AC4D4B7C5165 /* FlourishUI-FlourishUI */;
+			targetProxy = 22E33D797E656E686F7EBA110EDDB042 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0F93E9DD1D5CEBCB1E94E8A06E878390 /* Debug */ = {
+		047FABCDFA216C068F819EDE6388CCC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C44CFC818027697A41F67C938A3E809 /* FlourishUI.xcconfig */;
 			buildSettings = {
@@ -479,7 +479,7 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
 		333F3AD9645ADDCB204FA1C0712B30A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -660,26 +660,39 @@
 			};
 			name = Debug;
 		};
-		84F2E33506CDE89CA62D5C79C376E840 /* Release */ = {
+		8E334D2C886FAB934FA98671B87BB889 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C44CFC818027697A41F67C938A3E809 /* FlourishUI.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/FlourishUI/ResourceBundle-FlourishUI-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FlourishUI/FlourishUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlourishUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FlourishUI/FlourishUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = FlourishUI;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		DB7839327E10147E6ACC46327B019759 /* Debug */ = {
+		94875EC2E1D1DAD69F4D1F51BE3D0D60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C44CFC818027697A41F67C938A3E809 /* FlourishUI.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -703,6 +716,21 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE784CD8DC04A7880C2CCDF34C15B11B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C44CFC818027697A41F67C938A3E809 /* FlourishUI.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/FlourishUI/ResourceBundle-FlourishUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FlourishUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -739,36 +767,6 @@
 			};
 			name = Release;
 		};
-		F474F0DCEF7BBD51ECF11EA020A34DFF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C44CFC818027697A41F67C938A3E809 /* FlourishUI.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FlourishUI/FlourishUI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FlourishUI/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FlourishUI/FlourishUI.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FlourishUI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -777,6 +775,15 @@
 			buildConfigurations = (
 				51DC246E89D07E02442C4B2D0C5D4B65 /* Debug */,
 				472D54A5CD382A5750793FCB9A48AF9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A0247048F4838EA10204F853691F249 /* Build configuration list for PBXNativeTarget "FlourishUI-FlourishUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE784CD8DC04A7880C2CCDF34C15B11B /* Debug */,
+				047FABCDFA216C068F819EDE6388CCC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -799,20 +806,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7082EF4ED09F0C7B1B3A4BB8B80F05A1 /* Build configuration list for PBXNativeTarget "FlourishUI-FlourishUI" */ = {
+		6CB8C05ECCAFD76133C05F8AEFABE86B /* Build configuration list for PBXNativeTarget "FlourishUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F93E9DD1D5CEBCB1E94E8A06E878390 /* Debug */,
-				84F2E33506CDE89CA62D5C79C376E840 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BC5866FA23011E790E8E4D8D312D25B1 /* Build configuration list for PBXNativeTarget "FlourishUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DB7839327E10147E6ACC46327B019759 /* Debug */,
-				F474F0DCEF7BBD51ECF11EA020A34DFF /* Release */,
+				94875EC2E1D1DAD69F4D1F51BE3D0D60 /* Debug */,
+				8E334D2C886FAB934FA98671B87BB889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

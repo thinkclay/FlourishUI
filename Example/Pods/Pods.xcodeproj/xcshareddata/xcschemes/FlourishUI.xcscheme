@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '83D424CDF0736AA8F632711B'
+               BlueprintIdentifier = 'A9B2CFC7FFC93D522D34FE78'
                BlueprintName = 'FlourishUI'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'FlourishUI.framework'>
