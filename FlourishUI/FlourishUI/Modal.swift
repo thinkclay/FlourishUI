@@ -102,7 +102,7 @@ public class Modal: UIViewController
     var action:( () -> Void )!
   }
   
-  required public init(coder aDecoder: NSCoder)
+  required public init?(coder aDecoder: NSCoder)
   {
     fatalError("NSCoding not supported")
   }
@@ -119,13 +119,13 @@ public class Modal: UIViewController
     
     // Set up main view
     view.frame = UIScreen.mainScreen().bounds
-    view.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+    view.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
     view.backgroundColor = _settings.overlayColor
     view.addSubview(_overlay)
     
     // Overlay
     _overlay.frame = view.frame
-    _overlay.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+    _overlay.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
     _overlay.addSubview(dialog)
     
     // Dialog
@@ -190,7 +190,7 @@ public class Modal: UIViewController
     dialog.center.y = view.center.y
     
     let x = _settings.padding
-    var y = _settings.padding + _settings.titleHeight
+    let y = _settings.padding + _settings.titleHeight
     let w = width - (2 * _settings.padding)
     
     bodyLabel.frame = CGRect(x: x, y: y, width: w, height: _bodyHeight)
@@ -209,7 +209,7 @@ public class Modal: UIViewController
         let ctrl = UIControl()
         ctrl.sendAction(btn.selector, to:btn.target, forEvent:nil)
       default :
-        println("Unknow action type for button")
+        print("Unknow action type for button")
     }
 
     hide()
@@ -220,7 +220,7 @@ public class Modal: UIViewController
     view.alpha = 0
     dialog.frame.origin.y = -view.frame.height
     
-    if let rv = UIApplication.sharedApplication().keyWindow?.subviews.first as? UIView
+    if let rv = UIApplication.sharedApplication().keyWindow?.subviews.first
     {
       rv.addSubview(view)
       view.frame = rv.bounds
@@ -329,7 +329,7 @@ public class Modal: UIViewController
     let curvyness = CGFloat(5)
     let radius = CGFloat(1)
     
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     
     // top left
     path.moveToPoint(CGPoint(x: radius, y: height))
@@ -350,8 +350,8 @@ public class Modal: UIViewController
   
   private func addHoverShadow(view: UIView)
   {
-    var ovalRect = CGRect(x: 10, y: _height + 15, width: width - 20, height: 15)
-    var path = UIBezierPath(roundedRect: ovalRect, cornerRadius: 10)
+    let ovalRect = CGRect(x: 10, y: _height + 15, width: width - 20, height: 15)
+    let path = UIBezierPath(roundedRect: ovalRect, cornerRadius: 10)
     
     view.layer.shadowPath = path.CGPath
   }
