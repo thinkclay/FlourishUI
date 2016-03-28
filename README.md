@@ -5,11 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/FlourishUI.svg?style=flat)](http://cocoapods.org/pods/FlourishUI)
 [![Platform](https://img.shields.io/cocoapods/p/FlourishUI.svg?style=flat)](http://cocoapods.org/pods/FlourishUI)
 
-<img src="https://raw.githubusercontent.com/unicorn/FlourishUI/2.0/Preview.gif" alt="Preview of UI" align="right" />
+<img src="https://github.com/thinkclay/FlourishUI/blob/master/Screenshots/animated.gif" alt="Preview of UI" align="right" />
 
 We absolutely **love** beautiful interfaces! As an organization named Unicorn, we are obligated to be unique and majestic. That is why we have made this highly configurable, out-of-the-box-pretty, User Interface library/kit thingy. It has a minimal set of UI components now, but already packs quite a punch with the UIColor extension, animated Material-inspired buttons, and modal views.
 
-## Usage
+## Getting Started
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
