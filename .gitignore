@@ -19,6 +19,8 @@ DerivedData
 *.hmap
 *.ipa
 
+.tags*
+
 # Bundler
 .bundle
 

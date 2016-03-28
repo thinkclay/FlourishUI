@@ -185,8 +185,8 @@ public class Modal: UIViewController
     dismissButton.titleLabel?.font = Font.button
     dismissButton.actionType = Action.Selector
     dismissButton.target = self
-    dismissButton.selector = Selector("hide")
-    dismissButton.addTarget(self, action: Selector("buttonTapped:"), forControlEvents: .TouchUpInside)
+    dismissButton.selector = #selector(self.hide)
+    dismissButton.addTarget(self, action: #selector(self.buttonTapped(_:)), forControlEvents: .TouchUpInside)
     dialog.addSubview(dismissButton)
   }
   
@@ -272,7 +272,7 @@ public class Modal: UIViewController
       if duration > 0
       {
         durationTimer?.invalidate()
-        durationTimer = NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: Selector("hide"), userInfo: nil, repeats: false)
+        durationTimer = NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: #selector(self.hide), userInfo: nil, repeats: false)
       }
       
       // Animate the dialog
