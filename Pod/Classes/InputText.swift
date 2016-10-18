@@ -1,15 +1,15 @@
 import UIKit
 
 @IBDesignable
-public class InputText: UITextField
+open class InputText: UITextField
 {
-  @IBInspectable public var padding: CGSize = CGSize(width: 8, height: 5)
-  @IBInspectable public var borderRadius = CGFloat(5)
-  @IBInspectable public var borderColor = UIColor.lightGrayColor().CGColor
-  @IBInspectable public var borderWidth = CGFloat(1)
-  @IBInspectable public var icon = UIImage()
+  @IBInspectable open var padding: CGSize = CGSize(width: 8, height: 5)
+  @IBInspectable open var borderRadius = CGFloat(5)
+  @IBInspectable open var borderColor = UIColor.lightGray.cgColor
+  @IBInspectable open var borderWidth = CGFloat(1)
+  @IBInspectable open var icon = UIImage()
   
-  override public func layoutSubviews()
+  override open func layoutSubviews()
   {
     super.layoutSubviews()
     
@@ -18,9 +18,9 @@ public class InputText: UITextField
     layer.borderWidth = borderWidth
   }
   
-  override public func textRectForBounds(bounds: CGRect) -> CGRect
+  override open func textRect(forBounds bounds: CGRect) -> CGRect
   {
-    let rect = super.textRectForBounds(bounds)
+    let rect = super.textRect(forBounds: bounds)
     
     let newRect = CGRect(
       x: rect.origin.x + padding.width,
@@ -32,7 +32,7 @@ public class InputText: UITextField
     return newRect
   }
   
-  override public func editingRectForBounds(bounds: CGRect) -> CGRect {
-    return textRectForBounds(bounds)
+  override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+    return textRect(forBounds: bounds)
   }
 }
