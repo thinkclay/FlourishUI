@@ -1,23 +1,23 @@
 import UIKit
 
-public class Modal: UIViewController
+open class Modal: UIViewController
 {
-  private var _settings: Settings = Settings() {
+  fileprivate var _settings: Settings = Settings() {
     didSet {
       _height = _settings.height
       _bodyHeight = _settings.bodyHeight
     }
   }
   
-  private var _overlay = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-  private var dialog = UIView()
-  private var titleLabel = UILabel()
-  private var bodyLabel = UITextView()
-  private var dismissButton = ModalButton(frame: CGRect())
-  private var status: Status = .Notice
-  private var durationTimer: NSTimer!
-  private var _bodyHeight: CGFloat = 90
-  private var _height: CGFloat = 178
+  fileprivate var _overlay = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+  fileprivate var dialog = UIView()
+  fileprivate var titleLabel = UILabel()
+  fileprivate var bodyLabel = UITextView()
+  fileprivate var dismissButton = ModalButton(frame: CGRect())
+  fileprivate var status: Status = .notice
+  fileprivate var durationTimer: Timer!
+  fileprivate var _bodyHeight: CGFloat = 90
+  fileprivate var _height: CGFloat = 178
 
   var width: CGFloat {
     var width = (view.frame.width - 2 * _settings.padding)
@@ -32,17 +32,17 @@ public class Modal: UIViewController
   
   public enum Status
   {
-    case Success, Error, Notice, Warning, Info
+    case success, error, notice, warning, info
   }
   
   public enum Action
   {
-    case None, Selector, Closure
+    case none, selector, closure
   }
   
   public enum Shadow
   {
-    case Normal, Curl, Hover
+    case normal, curl, hover
   }
   
   public struct Settings
@@ -79,8 +79,8 @@ public class Modal: UIViewController
     
     public init()
     {
-      backgroundColor = .whiteColor()
-      borderColor = .lightGrayColor()
+      backgroundColor = UIColor.white
+      borderColor = UIColor.lightGray
       equalAspectRatio = false
       borderRadius = 5
       borderWidth = 0.5
@@ -93,15 +93,15 @@ public class Modal: UIViewController
       buttonHeight = 40
       buttonCornerRadius = 3
       dismissText = "Close"
-      shadowType = .Normal
-      shadowColor = .blackColor()
+      shadowType = .normal
+      shadowColor = UIColor.black
       shadowOffset = CGSize(width: 0, height: 2)
       shadowOpacity = 0.2
       shadowRadius = 1
-      overlayColor = .clearColor()
-      overlayBlurStyle = .Light
-      titleColor = .darkGrayColor()
-      bodyColor = .grayColor()
+      overlayColor = UIColor.clear
+      overlayBlurStyle = .light
+      titleColor = UIColor.darkGray
+      bodyColor = UIColor.gray
     }
   }
   
@@ -123,7 +123,7 @@ public class Modal: UIViewController
   
   class ModalButton: Button
   {
-    var actionType = Action.None
+    var actionType = Action.none
     var target: AnyObject!
     var selector: Selector!
     var action:( () -> Void )!
@@ -145,19 +145,19 @@ public class Modal: UIViewController
     self._overlay = UIVisualEffectView(effect: UIBlurEffect(style: _settings.overlayBlurStyle))
     
     // Set up main view
-    view.frame = UIScreen.mainScreen().bounds
-    view.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
+    view.frame = UIScreen.main.bounds
+    view.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
     view.backgroundColor = _settings.overlayColor
     view.addSubview(_overlay)
     
     // Overlay
     _overlay.frame = view.frame
-    _overlay.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+    _overlay.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     _overlay.addSubview(dialog)
     
     // Dialog
     dialog.backgroundColor = _settings.backgroundColor
-    dialog.layer.borderColor = _settings.borderColor.CGColor
+    dialog.layer.borderColor = _settings.borderColor.cgColor
     dialog.layer.cornerRadius = _settings.borderRadius
     dialog.layer.masksToBounds = false
     dialog.layer.borderWidth = _settings.borderWidth
@@ -165,42 +165,42 @@ public class Modal: UIViewController
     // Title
     titleLabel.textColor = _settings.titleColor
     titleLabel.numberOfLines = 1
-    titleLabel.textAlignment = .Center
+    titleLabel.textAlignment = .center
     titleLabel.font = Font.header
     titleLabel.frame = CGRect(x: _settings.padding, y: _settings.padding, width: width - 2 * _settings.padding, height: _settings.titleHeight)
     dialog.addSubview(titleLabel)
     
     // Body
-    bodyLabel.backgroundColor = UIColor.clearColor()
+    bodyLabel.backgroundColor = UIColor.clear
     bodyLabel.textColor = _settings.bodyColor
-    bodyLabel.editable = false
-    bodyLabel.textAlignment = .Center
-    bodyLabel.textContainerInset = UIEdgeInsetsZero
+    bodyLabel.isEditable = false
+    bodyLabel.textAlignment = .center
+    bodyLabel.textContainerInset = UIEdgeInsets.zero
     bodyLabel.textContainer.lineFragmentPadding = 0;
     bodyLabel.font = Font.text
     dialog.addSubview(bodyLabel)
     
     // Button
-    dismissButton.setTitle(_settings.dismissText, forState: .Normal)
+    dismissButton.setTitle(_settings.dismissText, for: UIControlState())
     dismissButton.titleLabel?.font = Font.button
-    dismissButton.actionType = Action.Selector
+    dismissButton.actionType = Action.selector
     dismissButton.target = self
     dismissButton.selector = #selector(self.hide)
-    dismissButton.addTarget(self, action: #selector(self.buttonTapped(_:)), forControlEvents: .TouchUpInside)
+    dismissButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
     dialog.addSubview(dismissButton)
   }
   
   
-  override public func viewWillLayoutSubviews()
+  override open func viewWillLayoutSubviews()
   {
     super.viewWillLayoutSubviews()
     
-    var size = UIScreen.mainScreen().bounds.size
+    var size = UIScreen.main.bounds.size
     
-    if (UIDevice.currentDevice().systemVersion as NSString).floatValue < 8.0
+    if (UIDevice.current.systemVersion as NSString).floatValue < 8.0
     {
       // iOS versions before 7.0 did not switch the width and height on device roration
-      if UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)
+      if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
       {
         size = CGSize(width: size.height, height: size.width)
       }
@@ -226,15 +226,15 @@ public class Modal: UIViewController
     dismissButton.layer.masksToBounds = true
   }
   
-  func buttonTapped(btn: ModalButton)
+  func buttonTapped(_ btn: ModalButton)
   {
     switch btn.actionType
     {
-      case .Closure :
+      case .closure :
         btn.action()
-      case .Selector :
+      case .selector :
         let ctrl = UIControl()
-        ctrl.sendAction(btn.selector, to:btn.target, forEvent:nil)
+        ctrl.sendAction(btn.selector, to:btn.target, for:nil)
       default :
         print("Unknow action type for button")
     }
@@ -242,20 +242,20 @@ public class Modal: UIViewController
     hide()
   }
   
-  public func show(duration: NSTimeInterval = 0) -> Modal
+  open func show(_ duration: TimeInterval = 0) -> Modal
   {
     view.alpha = 0
     dialog.frame.origin.y = -view.frame.height
     
-    if let rv = UIApplication.sharedApplication().keyWindow?.subviews.first
+    if let rv = UIApplication.shared.keyWindow?.subviews.first
     {
       rv.addSubview(view)
       view.frame = rv.bounds
       _overlay.frame = rv.bounds
           
       // Subtitle: adjusts to text view size
-      let r = bodyLabel.text.boundingRectWithSize(CGSize(width: width - 2 * _settings.padding, height: 90),
-        options: .UsesLineFragmentOrigin,
+      let r = bodyLabel.text.boundingRect(with: CGSize(width: width - 2 * _settings.padding, height: 90),
+        options: .usesLineFragmentOrigin,
         attributes: [NSFontAttributeName: Font.text],
         context: nil)
       
@@ -272,17 +272,17 @@ public class Modal: UIViewController
       if duration > 0
       {
         durationTimer?.invalidate()
-        durationTimer = NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: #selector(self.hide), userInfo: nil, repeats: false)
+        durationTimer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(self.hide), userInfo: nil, repeats: false)
       }
       
       // Animate the dialog
-      UIView.animateWithDuration(0.2,
+      UIView.animate(withDuration: 0.2,
         animations: {
           self.dialog.center.y = rv.center.y + 15
           self.view.alpha = 1
         },
         completion: { finished in
-          UIView.animateWithDuration(0.2, animations: { self.dialog.center = rv.center })
+          UIView.animate(withDuration: 0.2, animations: { self.dialog.center = rv.center })
         }
       )
     }
@@ -290,9 +290,9 @@ public class Modal: UIViewController
     return self
   }
   
-  public func hide()
+  open func hide()
   {
-    UIView.animateWithDuration(0.2,
+    UIView.animate(withDuration: 0.2,
       animations: {
         self.view.alpha = 0
       },
@@ -302,48 +302,48 @@ public class Modal: UIViewController
     )
   }
   
-  public func addShadow(view: UIView, shadow: Shadow)
+  open func addShadow(_ view: UIView, shadow: Shadow)
   {
-    view.layer.shadowColor = _settings.shadowColor.CGColor
+    view.layer.shadowColor = _settings.shadowColor.cgColor
     view.layer.shadowOffset = _settings.shadowOffset
     view.layer.shadowOpacity = _settings.shadowOpacity
     view.layer.shadowRadius = _settings.shadowRadius
     
     switch shadow
     {
-      case .Normal :
+      case .normal :
         addDropShadow(view)
-      case .Curl :
+      case .curl :
         addCurlShadow(view)
-      case .Hover :
+      case .hover :
         addHoverShadow(view)
     }
   }
   
-  private func metaForStatus(status: Status) -> (text: String, color: UIColor)
+  fileprivate func metaForStatus(_ status: Status) -> (text: String, color: UIColor)
   {
     switch status
     {
-      case .Success :
+      case .success :
         return ("Success", Color.success)
 
-      case .Error :
+      case .error :
         return ("Error", Color.error)
        
-      case .Notice :
+      case .notice :
         return ("Notice", Color.notice)
         
-      case .Warning :
+      case .warning :
         return ("Warning", Color.warning)
         
-      case .Info :
+      case .info :
         return ("Info", Color.info)
     }
   }
   
-  private func addDropShadow(view: UIView) {}
+  fileprivate func addDropShadow(_ view: UIView) {}
   
-  private func addCurlShadow(view: UIView)
+  fileprivate func addCurlShadow(_ view: UIView)
   {
     let size = view.bounds.size
     let width = size.width
@@ -356,27 +356,27 @@ public class Modal: UIViewController
     let path = UIBezierPath()
     
     // top left
-    path.moveToPoint(CGPoint(x: radius, y: height))
+    path.move(to: CGPoint(x: radius, y: height))
     
     // top right
-    path.addLineToPoint(CGPoint(x: width - 2 * radius, y: height))
+    path.addLine(to: CGPoint(x: width - 2 * radius, y: height))
     
     // bottom right + a little extra
-    path.addLineToPoint(CGPoint(x: width - 2 * radius, y: height + depth))
+    path.addLine(to: CGPoint(x: width - 2 * radius, y: height + depth))
     
     // path to bottom left via curve
-    path.addCurveToPoint(CGPoint(x: radius, y: height + depth),
+    path.addCurve(to: CGPoint(x: radius, y: height + depth),
       controlPoint1: CGPoint(x: width - curvyness, y: height + lessDepth - curvyness),
       controlPoint2: CGPoint(x: curvyness, y: height + lessDepth - curvyness))
     
-    view.layer.shadowPath = path.CGPath
+    view.layer.shadowPath = path.cgPath
   }
   
-  private func addHoverShadow(view: UIView)
+  fileprivate func addHoverShadow(_ view: UIView)
   {
     let ovalRect = CGRect(x: 10, y: _height + 15, width: width - 20, height: 15)
     let path = UIBezierPath(roundedRect: ovalRect, cornerRadius: 10)
     
-    view.layer.shadowPath = path.CGPath
+    view.layer.shadowPath = path.cgPath
   }
 }

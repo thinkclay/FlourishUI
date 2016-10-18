@@ -22,10 +22,10 @@ class Button: UIButton
   
   let rippleForegroundView = UIView()
   let rippleBackgroundView = UIView()
-  private var tempShadowRadius: CGFloat = 0
-  private var tempShadowOpacity: Float = 0
+  fileprivate var tempShadowRadius: CGFloat = 0
+  fileprivate var tempShadowOpacity: Float = 0
   
-  private var rippleMask: CAShapeLayer? {
+  fileprivate var rippleMask: CAShapeLayer? {
     get {
       if rippleOverBounds
       {
@@ -34,7 +34,7 @@ class Button: UIButton
       else
       {
         let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).CGPath
+        maskLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
         return maskLayer
       }
     }
@@ -52,7 +52,7 @@ class Button: UIButton
     setup()
   }
   
-  private func setup()
+  fileprivate func setup()
   {
     updateUI()
     
@@ -66,37 +66,37 @@ class Button: UIButton
     
     layer.shadowRadius = 0
     layer.shadowOffset = CGSize(width: 0, height: 1)
-    layer.shadowColor = UIColor(white: 0.0, alpha: 0.5).CGColor
+    layer.shadowColor = UIColor(white: 0.0, alpha: 0.5).cgColor
   }
   
-  private func updateUI()
+  fileprivate func updateUI()
   {
-    let size: CGFloat = CGRectGetWidth(bounds) * CGFloat(ripplePercent)
-    let x: CGFloat = (CGRectGetWidth(bounds)/2) - (size/2)
-    let y: CGFloat = (CGRectGetHeight(bounds)/2) - (size/2)
+    let size: CGFloat = bounds.width * CGFloat(ripplePercent)
+    let x: CGFloat = (bounds.width/2) - (size/2)
+    let y: CGFloat = (bounds.height/2) - (size/2)
     let corner: CGFloat = size/2
     
     if let backgroundColor = backgroundColor
     {
       rippleForegroundView.backgroundColor = UIColor.adjustValue(backgroundColor, percentage: 1.1)
     }
-    rippleForegroundView.frame = CGRectMake(x, y, size, size)
+    rippleForegroundView.frame = CGRect(x: x, y: y, width: size, height: size)
     rippleForegroundView.layer.cornerRadius = corner
   }
   
-  override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool
+  override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool
   {
-    rippleForegroundView.center = touch.locationInView(self)
+    rippleForegroundView.center = touch.location(in: self)
     
-    UIView.animateWithDuration(0.1, animations: { self.rippleBackgroundView.alpha = 1 }, completion: nil)
+    UIView.animate(withDuration: 0.1, animations: { self.rippleBackgroundView.alpha = 1 }, completion: nil)
     
-    rippleForegroundView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+    rippleForegroundView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
     
-    UIView.animateWithDuration(0.7,
+    UIView.animate(withDuration: 0.7,
       delay: 0,
-      options: .CurveEaseOut,
+      options: .curveEaseOut,
       animations: {
-        self.rippleForegroundView.transform = CGAffineTransformIdentity
+        self.rippleForegroundView.transform = CGAffineTransform.identity
       },
       completion: nil)
     
@@ -112,32 +112,32 @@ class Button: UIButton
     let groupAnim = CAAnimationGroup()
     groupAnim.duration = 0.7
     groupAnim.fillMode = kCAFillModeForwards
-    groupAnim.removedOnCompletion = false
+    groupAnim.isRemovedOnCompletion = false
     groupAnim.animations = [shadowAnim, opacityAnim]
     
-    layer.addAnimation(groupAnim, forKey:"shadow")
+    layer.add(groupAnim, forKey:"shadow")
     
-    return super.beginTrackingWithTouch(touch, withEvent: event)
+    return super.beginTracking(touch, with: event)
   }
   
-  override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?)
+  override func endTracking(_ touch: UITouch?, with event: UIEvent?)
   {
-    super.endTrackingWithTouch(touch, withEvent: event)
+    super.endTracking(touch, with: event)
     
-    UIView.animateWithDuration(0.1,
+    UIView.animate(withDuration: 0.1,
       animations: {
         self.rippleBackgroundView.alpha = 1
       },
       completion: { success in
-        UIView.animateWithDuration(0.6 , animations: { self.rippleBackgroundView.alpha = 0 })
+        UIView.animate(withDuration: 0.6 , animations: { self.rippleBackgroundView.alpha = 0 })
       }
     )
     
-    UIView.animateWithDuration(0.7,
+    UIView.animate(withDuration: 0.7,
       delay: 0,
-      options: [.CurveEaseOut, .BeginFromCurrentState],
+      options: [.curveEaseOut, .beginFromCurrentState],
       animations: {
-        self.rippleForegroundView.transform = CGAffineTransformIdentity
+        self.rippleForegroundView.transform = CGAffineTransform.identity
         
         let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
         shadowAnim.toValue = self.tempShadowRadius
@@ -148,10 +148,10 @@ class Button: UIButton
         let groupAnim = CAAnimationGroup()
         groupAnim.duration = 0.7
         groupAnim.fillMode = kCAFillModeForwards
-        groupAnim.removedOnCompletion = false
+        groupAnim.isRemovedOnCompletion = false
         groupAnim.animations = [shadowAnim, opacityAnim]
         
-        self.layer.addAnimation(groupAnim, forKey:"shadowBack")
+        self.layer.add(groupAnim, forKey:"shadowBack")
       },
       completion: nil
     )

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "FlourishUI"
-  s.version          = "2.2.0"
+  s.version          = "3.0.0"
   s.summary          = "FlourishUI is a nice clean user interface framework"
   s.description      = "FlourishUI is a UI framework for quickly and easily making good looking iOS components."
   s.homepage         = "https://github.com/thinkclay/FlourishUI"

@@ -11,12 +11,12 @@ extension UIColor
     
     if rgba.hasPrefix("#")
     {
-      let index   = rgba.startIndex.advancedBy(1)
-      let hex     = rgba.substringFromIndex(index)
-      let scanner = NSScanner(string: hex)
+      let index   = rgba.characters.index(rgba.startIndex, offsetBy: 1)
+      let hex     = rgba.substring(from: index)
+      let scanner = Scanner(string: hex)
       var hexValue: CUnsignedLongLong = 0
     
-      if scanner.scanHexLongLong(&hexValue)
+      if scanner.scanHexInt64(&hexValue)
       {
         red   = CGFloat((hexValue & 0xFF0000) >> 16) / 255.0
         green = CGFloat((hexValue & 0x00FF00) >> 8)  / 255.0
@@ -35,7 +35,7 @@ extension UIColor
     self.init(red:red, green:green, blue:blue, alpha:alpha)
   }
   
-  class func adjustValue(color: UIColor, percentage: CGFloat = 1.5) -> UIColor
+  class func adjustValue(_ color: UIColor, percentage: CGFloat = 1.5) -> UIColor
   {
     var h: CGFloat = 0
     var s: CGFloat = 0

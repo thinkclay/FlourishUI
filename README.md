@@ -20,7 +20,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ***Release Notes***
 
-[Master](https://github.com/unicorn/FlourishUI/tree/master) contains the latest bleeding edge code. Currently master is supporting Swift 2.1 and up.
+[Master](https://github.com/unicorn/FlourishUI/tree/master) contains the latest bleeding edge code. Currently master is supporting Swift 3.0 but there are [releases](https://github.com/thinkclay/FlourishUI/releases) for older versions of Swift.
 
 This library was built on iOS 8.x, but does offer decent backwards compatibility. We haven't tested older devices thoroughly however, so if you find a breaking issue, please file an issue on the repo or submit a pull request!
 
@@ -28,7 +28,7 @@ This library was built on iOS 8.x, but does offer decent backwards compatibility
 ### Inspiration
 
 This library was hand-written, but borrowed from concepts in [ZFRipple](https://github.com/zoonooz/ZFRippleButton),
-[SLCAlertView](https://github.com/vikmeup/SCLAlertView-Swift) and [Material](http://www.google.com/design/spec/material-design/introduction.html). We'd like to thank them for paving the way for some cool concepts and for contributing their code as MIT. Following suit, we have also made this open source and completely void of Copyright or restrictions. Just use it already, and make your apps look like sexy unicorns!
+[SLCAlertView](https://github.com/vikmeup/SCLAlertView-Swift) and [Material](http://www.google.com/design/spec/material-design/introduction.html). We'd like to thank them for paving the way for some cool concepts and for contributing their code as MIT. Following suit, we have also made this open source and completely void of copyright or restrictions. Just use it already, and make your apps look like sexy unicorns!
 
 
 ## Installation
