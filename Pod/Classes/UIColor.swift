@@ -1,21 +1,21 @@
 import UIKit
 
-extension UIColor
+public extension UIColor
 {
-  convenience init(rgba: String)
+  convenience init(hex: String)
   {
     var red:   CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue:  CGFloat = 0.0
     let alpha: CGFloat = 1.0
     
-    if rgba.hasPrefix("#")
+    if hex.hasPrefix("#")
     {
-      let index   = rgba.characters.index(rgba.startIndex, offsetBy: 1)
-      let hex     = rgba.substring(from: index)
+      let index   = hex.characters.index(hex.startIndex, offsetBy: 1)
+      let hex     = hex.substring(from: index)
       let scanner = Scanner(string: hex)
       var hexValue: CUnsignedLongLong = 0
-    
+      
       if scanner.scanHexInt64(&hexValue)
       {
         red   = CGFloat((hexValue & 0xFF0000) >> 16) / 255.0
@@ -32,7 +32,12 @@ extension UIColor
       print("invalid rgb string, missing '#' as prefix", terminator: "")
     }
     
-    self.init(red:red, green:green, blue:blue, alpha:alpha)
+    self.init(red: red, green: green, blue: blue, alpha: alpha)
+  }
+  
+  convenience init(rgba: [CGFloat])
+  {
+    self.init(red: rgba[0]/255.0, green: rgba[1]/255.0, blue: rgba[2]/255.0, alpha: rgba[3])
   }
   
   class func adjustValue(_ color: UIColor, percentage: CGFloat = 1.5) -> UIColor

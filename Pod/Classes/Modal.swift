@@ -2,6 +2,7 @@ import UIKit
 
 open class Modal: UIViewController
 {
+
   fileprivate var _settings: Settings = Settings() {
     didSet {
       _height = _settings.height
@@ -18,7 +19,7 @@ open class Modal: UIViewController
   fileprivate var durationTimer: Timer!
   fileprivate var _bodyHeight: CGFloat = 90
   fileprivate var _height: CGFloat = 178
-
+  
   var width: CGFloat {
     var width = (view.frame.width - 2 * _settings.padding)
     
@@ -238,11 +239,11 @@ open class Modal: UIViewController
       default :
         print("Unknow action type for button")
     }
-
+    
     hide()
   }
   
-  open func show(_ duration: TimeInterval = 0) -> Modal
+  open func show(_ duration: TimeInterval = 0)
   {
     view.alpha = 0
     dialog.frame.origin.y = -view.frame.height
@@ -252,12 +253,14 @@ open class Modal: UIViewController
       rv.addSubview(view)
       view.frame = rv.bounds
       _overlay.frame = rv.bounds
-          
+      
       // Subtitle: adjusts to text view size
-      let r = bodyLabel.text.boundingRect(with: CGSize(width: width - 2 * _settings.padding, height: 90),
+      let r = bodyLabel.text.boundingRect(
+        with: CGSize(width: width - 2 * _settings.padding, height: 90),
         options: .usesLineFragmentOrigin,
         attributes: [NSFontAttributeName: Font.text],
-        context: nil)
+        context: nil
+      )
       
       let textHeight = ceil(r.size.height)
       
@@ -276,27 +279,31 @@ open class Modal: UIViewController
       }
       
       // Animate the dialog
-      UIView.animate(withDuration: 0.2,
+      UIView.animate(
+        withDuration: 0.2,
         animations: {
           self.dialog.center.y = rv.center.y + 15
           self.view.alpha = 1
         },
-        completion: { finished in
+        completion: {
+          finished in
+
           UIView.animate(withDuration: 0.2, animations: { self.dialog.center = rv.center })
         }
       )
     }
-    
-    return self
   }
   
   open func hide()
   {
-    UIView.animate(withDuration: 0.2,
+    UIView.animate(
+      withDuration: 0.2,
       animations: {
         self.view.alpha = 0
       },
-      completion: { finished in
+      completion: {
+        finished in
+        
         self.view.removeFromSuperview()
       }
     )
@@ -326,10 +333,10 @@ open class Modal: UIViewController
     {
       case .success :
         return ("Success", Color.success)
-
+        
       case .error :
         return ("Error", Color.error)
-       
+        
       case .notice :
         return ("Notice", Color.notice)
         
@@ -365,9 +372,11 @@ open class Modal: UIViewController
     path.addLine(to: CGPoint(x: width - 2 * radius, y: height + depth))
     
     // path to bottom left via curve
-    path.addCurve(to: CGPoint(x: radius, y: height + depth),
+    path.addCurve(
+      to: CGPoint(x: radius, y: height + depth),
       controlPoint1: CGPoint(x: width - curvyness, y: height + lessDepth - curvyness),
-      controlPoint2: CGPoint(x: curvyness, y: height + lessDepth - curvyness))
+      controlPoint2: CGPoint(x: curvyness, y: height + lessDepth - curvyness)
+    )
     
     view.layer.shadowPath = path.cgPath
   }
@@ -379,4 +388,5 @@ open class Modal: UIViewController
     
     view.layer.shadowPath = path.cgPath
   }
+  
 }

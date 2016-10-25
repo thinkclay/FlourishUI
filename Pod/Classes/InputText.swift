@@ -3,6 +3,7 @@ import UIKit
 @IBDesignable
 open class InputText: UITextField
 {
+
   @IBInspectable open var padding: CGSize = CGSize(width: 8, height: 5)
   @IBInspectable open var borderRadius = CGFloat(5)
   @IBInspectable open var borderColor = UIColor.lightGray.cgColor
@@ -35,4 +36,5 @@ open class InputText: UITextField
   override open func editingRect(forBounds bounds: CGRect) -> CGRect {
     return textRect(forBounds: bounds)
   }
+  
 }

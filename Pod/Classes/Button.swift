@@ -2,17 +2,18 @@ import UIKit
 import QuartzCore
 
 @IBDesignable
-class Button: UIButton
+open class Button: UIButton
 {
-  @IBInspectable var ripplePercent: Float = 1 {
+  
+  @IBInspectable open var ripplePercent: Float = 1 {
     didSet {
       updateUI()
     }
   }
   
-  @IBInspectable var rippleOverBounds: Bool = false
+  @IBInspectable open var rippleOverBounds: Bool = false
   
-  @IBInspectable var buttonCornerRadius: Float = 0 {
+  @IBInspectable open var buttonCornerRadius: Float = 0 {
     didSet {
       layer.cornerRadius = CGFloat(buttonCornerRadius)
     }
@@ -20,8 +21,8 @@ class Button: UIButton
   
   @IBInspectable var shadowRippleRadius: Float = 1
   
-  let rippleForegroundView = UIView()
-  let rippleBackgroundView = UIView()
+  fileprivate let rippleForegroundView = UIView()
+  fileprivate let rippleBackgroundView = UIView()
   fileprivate var tempShadowRadius: CGFloat = 0
   fileprivate var tempShadowOpacity: Float = 0
   
@@ -40,13 +41,13 @@ class Button: UIButton
     }
   }
   
-  required init?(coder aDecoder: NSCoder)
+  required public init?(coder aDecoder: NSCoder)
   {
     super.init(coder: aDecoder)
     setup()
   }
   
-  override init(frame: CGRect)
+  override public init(frame: CGRect)
   {
     super.init(frame: frame)
     setup()
@@ -84,7 +85,7 @@ class Button: UIButton
     rippleForegroundView.layer.cornerRadius = corner
   }
   
-  override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool
+  override open func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool
   {
     rippleForegroundView.center = touch.location(in: self)
     
@@ -92,13 +93,15 @@ class Button: UIButton
     
     rippleForegroundView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
     
-    UIView.animate(withDuration: 0.7,
+    UIView.animate(
+      withDuration: 0.7,
       delay: 0,
       options: .curveEaseOut,
       animations: {
         self.rippleForegroundView.transform = CGAffineTransform.identity
       },
-      completion: nil)
+      completion: nil
+    )
     
     tempShadowRadius = layer.shadowRadius
     tempShadowOpacity = layer.shadowOpacity
@@ -120,20 +123,24 @@ class Button: UIButton
     return super.beginTracking(touch, with: event)
   }
   
-  override func endTracking(_ touch: UITouch?, with event: UIEvent?)
+  override open func endTracking(_ touch: UITouch?, with event: UIEvent?)
   {
     super.endTracking(touch, with: event)
     
-    UIView.animate(withDuration: 0.1,
+    UIView.animate(
+      withDuration: 0.1,
       animations: {
         self.rippleBackgroundView.alpha = 1
       },
-      completion: { success in
+      completion: {
+        success in
+        
         UIView.animate(withDuration: 0.6 , animations: { self.rippleBackgroundView.alpha = 0 })
       }
     )
     
-    UIView.animate(withDuration: 0.7,
+    UIView.animate(
+      withDuration: 0.7,
       delay: 0,
       options: [.curveEaseOut, .beginFromCurrentState],
       animations: {
@@ -157,7 +164,7 @@ class Button: UIButton
     )
   }
   
-  override func layoutSubviews()
+  override open func layoutSubviews()
   {
     super.layoutSubviews()
     
@@ -169,4 +176,5 @@ class Button: UIButton
     rippleBackgroundView.layer.frame = bounds
     rippleBackgroundView.layer.mask = rippleMask
   }
+  
 }

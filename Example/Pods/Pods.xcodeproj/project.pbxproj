@@ -11,6 +11,7 @@
 		43813CC7F074C7CB36B3D8CFB6646AC9 /* FlourishUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72E14E18DC7340DF461D575CE606C8E6 /* FlourishUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51911BC335E266AF0EAA433209EECE43 /* Pods-FlourishUI_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 477BE24D7EEBD8BB48131D87D3BE1D6C /* Pods-FlourishUI_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A4212D4341A3A2C84ED9A90DEB66A55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
+		6F84FEF41DBF37A70070ECAE /* ToggleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F84FEF31DBF37A70070ECAE /* ToggleSwitch.swift */; };
 		6FA102001FD23C72E20F8793A6D18856 /* Pods-FlourishUI_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD825C082557220DCA82CCFBCCE171E7 /* Pods-FlourishUI_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C798947AB448B83D3650788881D63CB /* FlourishUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4326120A0C1B04F418482EDD8D4A9EC5 /* FlourishUI.bundle */; };
 		94292B1508F489120F1B04EB5989F778 /* Pods-FlourishUI_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DBFCDCE95FB2DFB5F76A6E0E3DB652 /* Pods-FlourishUI_Tests-dummy.m */; };
@@ -64,6 +65,7 @@
 		552088DDC34C898C1C4694C4196E1A57 /* FlourishUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlourishUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DBFCDCE95FB2DFB5F76A6E0E3DB652 /* Pods-FlourishUI_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlourishUI_Tests-dummy.m"; sourceTree = "<group>"; };
 		6A07DF211D14C28BD702B9A4DC603196 /* Pods_FlourishUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlourishUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F84FEF31DBF37A70070ECAE /* ToggleSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleSwitch.swift; sourceTree = "<group>"; };
 		72E14E18DC7340DF461D575CE606C8E6 /* FlourishUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlourishUI-umbrella.h"; sourceTree = "<group>"; };
 		7992A77D3BFC605D7F9CCA0F127A44EA /* FlourishUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlourishUI-prefix.pch"; sourceTree = "<group>"; };
 		8F3921ABC2E94B744A54D6519E6DCD94 /* FlourishUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FlourishUI.modulemap; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		F00C0CFA15FFA5F423454CA3936835E9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6F84FEF31DBF37A70070ECAE /* ToggleSwitch.swift */,
 				FD1F33BDDC80E7001B7BC6BA3055E98D /* Button.swift */,
 				F084ED9F417A6F5B007162A44B77C2FB /* InputText.swift */,
 				1BC5B9DD56A04186E56AE4BA4B929B9C /* Modal.swift */,
@@ -438,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C14492F3FD177BEFE9ADC9925A6F90B5 /* Button.swift in Sources */,
+				6F84FEF41DBF37A70070ECAE /* ToggleSwitch.swift in Sources */,
 				A44BBA668719BFD9018282A3722E56C2 /* FlourishUI-dummy.m in Sources */,
 				1845DC4DDCDA7C782037109AE12A043C /* InputText.swift in Sources */,
 				EF5B675F3A1666D52EFE8AAEE8216FDA /* Modal.swift in Sources */,
