@@ -22,18 +22,21 @@ class ToggleButton: UIView
     var buttonFill: UIColor
     var buttonStroke: UIColor
     var innerShadow: UIColor
+    var x: CGFloat
     
     if active
     {
       buttonFill = UIColor(hex: "#6B60AB")
       buttonStroke = UIColor(hex: "#8579CE")
       innerShadow = UIColor(rgba: [255, 255, 255, 0.5])
+      x = 35
     }
     else
     {
       buttonFill = UIColor(hex: "#4D428E")
       buttonStroke = UIColor(hex: "#5C509D")
       innerShadow = UIColor(rgba: [255, 255, 255, 0.14])
+      x = 0
     }
     
     let context = UIGraphicsGetCurrentContext()!
@@ -67,6 +70,8 @@ class ToggleButton: UIView
     buttonStroke.setStroke()
     ovalPath.lineWidth = 1
     ovalPath.stroke()
+    
+    frame.origin.x = x
   }
 }
 
@@ -78,7 +83,7 @@ class ToggleSlide: UIView
   override init(frame: CGRect)
   {
     super.init(frame: frame)
-
+    
     backgroundColor = .clear
   }
   
@@ -114,15 +119,28 @@ class ToggleSlide: UIView
 
 open class ToggleSwitch: UIView
 {
-  var active: Bool = false
+  public var active: Bool = false {
+    didSet {
+      button.active = active
+      slide.active = active
+      button.setNeedsDisplay()
+      slide.setNeedsDisplay()
+    }
+  }
   var button = ToggleButton(frame: CGRect(x: 0, y: 1, width: 24, height: 24))
   var slide = ToggleSlide(frame: CGRect(x: 4, y: 0, width: 60, height: 20))
-
+  public var toggleCallback: (() -> ())?
+  
   override public init(frame: CGRect)
   {
     super.init(frame: frame)
     
     backgroundColor = .clear
+    
+    toggleCallback = { print("toggle init") }
+    
+    button.active = active
+    slide.active = active
     
     addSubview(slide)
     addSubview(button)
@@ -137,23 +155,17 @@ open class ToggleSwitch: UIView
   
   public func toggleHandler()
   {
-    active = !active
-    
-    button.active = !active
-    slide.active = !active
-    
-    button.setNeedsDisplay()
-    slide.setNeedsDisplay()
-    
     UIView.animate(
-      withDuration: 0.2,
+      withDuration: 0.15,
       delay: 0.0,
-      options: .curveEaseInOut,
+      options: .curveEaseIn,
       animations: {
         self.button.frame.origin.x = self.active ? 0 : 35
       },
       completion: {
         _ in
+        self.active = !self.active
+        self.toggleCallback!()
       }
     )
   }
