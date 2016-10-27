@@ -66,6 +66,8 @@ Modal(title: sender.titleLabel?.text, body: body, status: .Warning).show()
 
 ### Toggle Switch
 
+<img src="https://github.com/thinkclay/FlourishUI/blob/master/Screenshots/3.x.png" alt="Preview of UI" align="right" width="40%" />
+
 Flourish UI supports Toggle Switches as of 3.x and up! These are drawn entirely with core graphics and animated with UIKit, giving you vector scale and full customization.
 
 ```swift
