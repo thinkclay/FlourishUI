@@ -1,9 +1,16 @@
 import UIKit
 
-class ToggleButton: UIView
+public class ToggleButton: UIView
 {
   
   var active: Bool = false
+  
+  public var activeBackgroundColor = UIColor(hex: "#6B60AB")
+  public var activeBorderColor = UIColor(hex: "#8579CE")
+  public var activeInnerShadowColor = UIColor(rgba: [255, 255, 255, 0.5])
+  public var disabledBackgroundColor = UIColor(hex: "#4D428E")
+  public var disabledBorderColor = UIColor(hex: "#5C509D")
+  public var disabledInnerShadowColor = UIColor(rgba: [255, 255, 255, 0.14])
   
   override init(frame: CGRect)
   {
@@ -12,33 +19,17 @@ class ToggleButton: UIView
     backgroundColor = .clear
   }
   
-  required init?(coder aDecoder: NSCoder)
+  required public init?(coder aDecoder: NSCoder)
   {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func draw(_ rect: CGRect)
+  override public func draw(_ rect: CGRect)
   {
-    var buttonFill: UIColor
-    var buttonStroke: UIColor
-    var innerShadow: UIColor
-    var x: CGFloat
-    
-    if active
-    {
-      buttonFill = UIColor(hex: "#6B60AB")
-      buttonStroke = UIColor(hex: "#8579CE")
-      innerShadow = UIColor(rgba: [255, 255, 255, 0.5])
-      x = 35
-    }
-    else
-    {
-      buttonFill = UIColor(hex: "#4D428E")
-      buttonStroke = UIColor(hex: "#5C509D")
-      innerShadow = UIColor(rgba: [255, 255, 255, 0.14])
-      x = 0
-    }
-    
+    let buttonFill = active ? activeBackgroundColor : disabledBackgroundColor
+    let buttonStroke = active ? activeBorderColor : disabledBorderColor
+    let innerShadow = active ? activeInnerShadowColor : disabledInnerShadowColor
+    let x: CGFloat = active ? 35 : 0
     let context = UIGraphicsGetCurrentContext()!
     
     // Oval with drop shadow
@@ -75,10 +66,15 @@ class ToggleButton: UIView
   }
 }
 
-class ToggleSlide: UIView
+public class ToggleSlide: UIView
 {
   
   var active: Bool = false
+  
+  public var activeBackgroundColor = UIColor(hex: "#514398")
+  public var activeBorderColor = UIColor(hex: "#5B4CA9")
+  public var disabledBackgroundColor = UIColor(hex: "#382B76")
+  public var disabledBorderColor = UIColor(hex: "#4B3E8D")
   
   override init(frame: CGRect)
   {
@@ -87,33 +83,34 @@ class ToggleSlide: UIView
     backgroundColor = .clear
   }
   
-  required init?(coder aDecoder: NSCoder)
+  required public init?(coder aDecoder: NSCoder)
   {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func draw(_ rect: CGRect)
+  override public func draw(_ rect: CGRect)
   {
-    var slideFill: UIColor
-    var slideStroke: UIColor
-    
-    if active
-    {
-      slideFill = UIColor(hex: "#514398")
-      slideStroke = UIColor(hex: "#5B4CA9")
-    }
-    else
-    {
-      slideFill = UIColor(hex: "#382B76")
-      slideStroke = UIColor(hex: "#4B3E8D")
-    }
-    
+    let slideFill = active ? activeBackgroundColor : disabledBackgroundColor
+    let slideStroke = active ? activeBorderColor : disabledBorderColor
     let background = UIBezierPath(roundedRect: CGRect(x: 1, y: 7, width: 48, height: 10), cornerRadius: 10)
     background.lineWidth = 1
     slideFill.setFill()
     background.fill()
     slideStroke.setStroke()
     background.stroke()
+  }
+}
+
+public class ToggleLabel: UIButton
+{
+  override init(frame: CGRect)
+  {
+    super.init(frame: frame)
+  }
+  
+  required public init?(coder aDecoder: NSCoder)
+  {
+    fatalError("init(coder:) has not been implemented")
   }
 }
 
@@ -127,8 +124,9 @@ open class ToggleSwitch: UIView
       slide.setNeedsDisplay()
     }
   }
-  var button = ToggleButton(frame: CGRect(x: 0, y: 1, width: 24, height: 24))
-  var slide = ToggleSlide(frame: CGRect(x: 4, y: 0, width: 60, height: 20))
+  public var button = ToggleButton(frame: CGRect(x: 0, y: 1, width: 24, height: 24))
+  public var slide = ToggleSlide(frame: CGRect(x: 4, y: 0, width: 60, height: 20))
+  public var label = ToggleLabel(frame: CGRect(x: 80, y: 0, width: 100, height: 22))
   public var toggleCallback: (() -> ())?
   
   override public init(frame: CGRect)
@@ -144,6 +142,7 @@ open class ToggleSwitch: UIView
     
     addSubview(slide)
     addSubview(button)
+    addSubview(label)
     
     addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleHandler)))
     addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(toggleHandler)))
@@ -161,12 +160,12 @@ open class ToggleSwitch: UIView
       options: .curveEaseIn,
       animations: {
         self.button.frame.origin.x = self.active ? 0 : 35
-      },
+    },
       completion: {
         _ in
         self.active = !self.active
         self.toggleCallback!()
-      }
+    }
     )
   }
   
