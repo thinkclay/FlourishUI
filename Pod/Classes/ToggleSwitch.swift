@@ -5,12 +5,36 @@ public class ToggleButton: UIView
   
   var active: Bool = false
   
-  public var activeBackgroundColor = UIColor(hex: "#6B60AB")
-  public var activeBorderColor = UIColor(hex: "#8579CE")
-  public var activeInnerShadowColor = UIColor(rgba: [255, 255, 255, 0.5])
-  public var disabledBackgroundColor = UIColor(hex: "#4D428E")
-  public var disabledBorderColor = UIColor(hex: "#5C509D")
-  public var disabledInnerShadowColor = UIColor(rgba: [255, 255, 255, 0.14])
+  public var activeBackgroundColor = UIColor(hex: "#6B60AB") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var activeBorderColor = UIColor(hex: "#8579CE") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var activeInnerShadowColor = UIColor(rgba: [255, 255, 255, 0.5]) {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var disabledBackgroundColor = UIColor(hex: "#4D428E") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var disabledBorderColor = UIColor(hex: "#5C509D") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var disabledInnerShadowColor = UIColor(rgba: [255, 255, 255, 0.14]) {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
   
   override init(frame: CGRect)
   {
@@ -71,10 +95,26 @@ public class ToggleSlide: UIView
   
   var active: Bool = false
   
-  public var activeBackgroundColor = UIColor(hex: "#514398")
-  public var activeBorderColor = UIColor(hex: "#5B4CA9")
-  public var disabledBackgroundColor = UIColor(hex: "#382B76")
-  public var disabledBorderColor = UIColor(hex: "#4B3E8D")
+  public var activeBackgroundColor = UIColor(hex: "#514398") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var activeBorderColor = UIColor(hex: "#5B4CA9") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var disabledBackgroundColor = UIColor(hex: "#382B76") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  public var disabledBorderColor = UIColor(hex: "#4B3E8D") {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
   
   override init(frame: CGRect)
   {
@@ -126,7 +166,7 @@ open class ToggleSwitch: UIView
   }
   public var button = ToggleButton(frame: CGRect(x: 0, y: 1, width: 24, height: 24))
   public var slide = ToggleSlide(frame: CGRect(x: 4, y: 0, width: 60, height: 20))
-  public var label = ToggleLabel(frame: CGRect(x: 80, y: 0, width: 100, height: 22))
+  public var label = ToggleLabel(frame: CGRect(x: 70, y: 0, width: 100, height: 22))
   public var toggleCallback: (() -> ())?
   
   override public init(frame: CGRect)
@@ -144,6 +184,7 @@ open class ToggleSwitch: UIView
     addSubview(button)
     addSubview(label)
     
+    label.addTarget(self, action: #selector(toggleHandler), for: .touchUpInside)
     addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleHandler)))
     addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(toggleHandler)))
   }
