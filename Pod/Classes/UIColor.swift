@@ -40,14 +40,14 @@ public extension UIColor
     self.init(red: rgba[0]/255.0, green: rgba[1]/255.0, blue: rgba[2]/255.0, alpha: rgba[3])
   }
   
-  class func adjustValue(_ color: UIColor, percentage: CGFloat = 1.5) -> UIColor
+  func adjustValue(percentage: CGFloat = 1.5) -> UIColor
   {
     var h: CGFloat = 0
     var s: CGFloat = 0
     var b: CGFloat = 0
     var a: CGFloat = 0
     
-    color.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+    self.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
     
     return UIColor(hue: h, saturation: s, brightness: (b * percentage), alpha: a)
   }

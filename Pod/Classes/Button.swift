@@ -79,7 +79,7 @@ open class Button: UIButton
     
     if let backgroundColor = backgroundColor
     {
-      rippleForegroundView.backgroundColor = UIColor.adjustValue(backgroundColor, percentage: 1.1)
+      rippleForegroundView.backgroundColor = backgroundColor.adjustValue(percentage: 1.1)
     }
     rippleForegroundView.frame = CGRect(x: x, y: y, width: size, height: size)
     rippleForegroundView.layer.cornerRadius = corner

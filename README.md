@@ -48,13 +48,11 @@ Most of the code should be pretty self documenting. FlourishUI uses structs and 
 
 ### Button
 
-The Button class is ready to go with Interface Builder and IBDesignable, just inherit!
-You can check the demo to see this configured with IB.
+The Button class is ready to go with Interface Builder and IBDesignable, just inherit! You can check the demo to see this configured with IB.
 
 ### Modal
 
-Modals are heavily based on configurations, and thus, are built and called in code.
-We plan on making them more robust in time, but for now, you'll want to simply treat them like you would an AlertView.
+Modals are heavily based on configurations, and thus, are built and called in code. We plan on making them more robust in time, but for now, you'll want to simply treat them like you would an AlertView.
 
 ```swift
 Modal.Overlay.blurStyle = .ExtraLight
@@ -66,15 +64,49 @@ Modal.Dialog.shadowOpacity = 0.1
 Modal(title: sender.titleLabel?.text, body: body, status: .Warning).show()
 ```
 
+### Toggle Switch
+
+Flourish UI supports Toggle Switches as of 3.x and up! These are drawn entirely with core graphics and animated with UIKit, giving you vector scale and full customization.
+
+```swift
+//
+// Customizing toggle switches
+//
+let greenColor = UIColor(hex: "#3D8C8E")
+
+let toggle2 = ToggleSwitch()
+toggle2.frame = CGRect(x: 20, y: view.frame.height - 100, width: view.frame.width - 40, height: 24)
+toggle2.label.setTitle("Custom styled toggle", for: .normal)
+toggle2.active = true
+
+// Customize the label associated with the toggle switch
+toggle2.label.frame.size.width = 200
+toggle2.label.titleLabel?.textColor = .black
+
+// Customize the background which the toggle button slides across
+toggle2.slide.activeBackgroundColor = greenColor.adjustValue(percentage: 1.4)
+toggle2.slide.activeBorderColor = greenColor.adjustValue(percentage: 1.0)
+toggle2.slide.disabledBackgroundColor = UIColor(hex: "#99896F")
+toggle2.slide.disabledBorderColor = UIColor(hex: "#99896F").adjustValue(percentage: 0.5)
+
+// Customize the round toggle button
+toggle2.button.activeBackgroundColor = greenColor.adjustValue(percentage: 1.3)
+toggle2.button.activeBorderColor = greenColor.adjustValue(percentage: 1.1)
+toggle2.button.disabledBackgroundColor = UIColor(rgba: [153, 137, 111, 0.8])
+toggle2.button.disabledBorderColor = UIColor(rgba: [153, 137, 111, 0.8]).adjustValue(percentage: 0.5)
+
+view.addSubview(toggle2)
+```
+
 ### UIColor Extension
 
 ```swift
 // Create colors with hex value in string
-let red = UIColor(rgba: "#ff0000")
+let red = UIColor(hex: "#ff0000")
 
 // Darken or lighten the value (lightness)
 // 1 = 100% therefore > 1 is lighter and < 1 is darker
-UIColor.adjustValue(red, percentage: 1.5)
+red.adjustValue(percentage: 1.5)
 ```
 
 ## License
