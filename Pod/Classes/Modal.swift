@@ -154,7 +154,8 @@ open class Modal: UIViewController
     // Overlay
     _overlay.frame = view.frame
     _overlay.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    _overlay.addSubview(dialog)
+    _overlay.contentView.addSubview(dialog)
+//    _overlay.addSubview(dialog)
     
     // Dialog
     dialog.backgroundColor = _settings.backgroundColor
@@ -227,7 +228,7 @@ open class Modal: UIViewController
     dismissButton.layer.masksToBounds = true
   }
   
-  func buttonTapped(_ btn: ModalButton)
+@objc func buttonTapped(_ btn: ModalButton)
   {
     switch btn.actionType
     {
@@ -258,7 +259,7 @@ open class Modal: UIViewController
       let r = bodyLabel.text.boundingRect(
         with: CGSize(width: width - 2 * _settings.padding, height: 90),
         options: .usesLineFragmentOrigin,
-        attributes: [NSFontAttributeName: Font.text],
+        attributes: [NSAttributedStringKey.font: Font.text],
         context: nil
       )
       
@@ -294,7 +295,7 @@ open class Modal: UIViewController
     }
   }
   
-  open func hide()
+    @objc open func hide()
   {
     UIView.animate(
       withDuration: 0.2,

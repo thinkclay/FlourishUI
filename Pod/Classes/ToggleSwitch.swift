@@ -193,7 +193,7 @@ open class ToggleSwitch: UIView
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func toggleHandler()
+    @objc public func toggleHandler()
   {
     UIView.animate(
       withDuration: 0.15,
