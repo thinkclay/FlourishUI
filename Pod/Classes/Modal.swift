@@ -72,7 +72,7 @@ open class Modal: UIViewController
     
     // Overlay
     public var overlayColor: UIColor
-    public var overlayBlurStyle: UIBlurEffectStyle
+    public var overlayBlurStyle: UIBlurEffect.Style
     
     // Colors
     public var titleColor: UIColor
@@ -147,7 +147,7 @@ open class Modal: UIViewController
     
     // Set up main view
     view.frame = UIScreen.main.bounds
-    view.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
+    view.autoresizingMask =  [UIView.AutoresizingMask.flexibleHeight, UIView.AutoresizingMask.flexibleWidth]
     view.backgroundColor = _settings.overlayColor
     view.addSubview(_overlay)
     
@@ -183,7 +183,7 @@ open class Modal: UIViewController
     dialog.addSubview(bodyLabel)
     
     // Button
-    dismissButton.setTitle(_settings.dismissText, for: UIControlState())
+    dismissButton.setTitle(_settings.dismissText, for: UIControl.State())
     dismissButton.titleLabel?.font = Font.button
     dismissButton.actionType = Action.selector
     dismissButton.target = self
@@ -202,7 +202,7 @@ open class Modal: UIViewController
     if (UIDevice.current.systemVersion as NSString).floatValue < 8.0
     {
       // iOS versions before 7.0 did not switch the width and height on device roration
-      if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
+      if UIInterfaceOrientation.isLandscape
       {
         size = CGSize(width: size.height, height: size.width)
       }
@@ -259,7 +259,7 @@ open class Modal: UIViewController
       let r = bodyLabel.text.boundingRect(
         with: CGSize(width: width - 2 * _settings.padding, height: 90),
         options: .usesLineFragmentOrigin,
-        attributes: [NSAttributedStringKey.font: Font.text],
+        attributes: [NSAttributedString.Key.font: Font.text],
         context: nil
       )
       
