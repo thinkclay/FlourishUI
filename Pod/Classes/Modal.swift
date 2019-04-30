@@ -197,16 +197,7 @@ open class Modal: UIViewController
   {
     super.viewWillLayoutSubviews()
     
-    var size = UIScreen.main.bounds.size
-    
-    if (UIDevice.current.systemVersion as NSString).floatValue < 8.0
-    {
-      // iOS versions before 7.0 did not switch the width and height on device roration
-      if UIInterfaceOrientation.isLandscape
-      {
-        size = CGSize(width: size.height, height: size.width)
-      }
-    }
+    let size = UIScreen.main.bounds.size
     
     // Set background frame
     view.frame.size = size
