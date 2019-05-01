@@ -72,7 +72,7 @@ open class Modal: UIViewController
     
     // Overlay
     public var overlayColor: UIColor
-    public var overlayBlurStyle: UIBlurEffectStyle
+    public var overlayBlurStyle: UIBlurEffect.Style
     
     // Colors
     public var titleColor: UIColor
@@ -147,14 +147,15 @@ open class Modal: UIViewController
     
     // Set up main view
     view.frame = UIScreen.main.bounds
-    view.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
+    view.autoresizingMask =  [UIView.AutoresizingMask.flexibleHeight, UIView.AutoresizingMask.flexibleWidth]
     view.backgroundColor = _settings.overlayColor
     view.addSubview(_overlay)
     
     // Overlay
     _overlay.frame = view.frame
     _overlay.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    _overlay.addSubview(dialog)
+    _overlay.contentView.addSubview(dialog)
+//    _overlay.addSubview(dialog)
     
     // Dialog
     dialog.backgroundColor = _settings.backgroundColor
@@ -182,7 +183,7 @@ open class Modal: UIViewController
     dialog.addSubview(bodyLabel)
     
     // Button
-    dismissButton.setTitle(_settings.dismissText, for: UIControlState())
+    dismissButton.setTitle(_settings.dismissText, for: UIControl.State())
     dismissButton.titleLabel?.font = Font.button
     dismissButton.actionType = Action.selector
     dismissButton.target = self
@@ -196,16 +197,7 @@ open class Modal: UIViewController
   {
     super.viewWillLayoutSubviews()
     
-    var size = UIScreen.main.bounds.size
-    
-    if (UIDevice.current.systemVersion as NSString).floatValue < 8.0
-    {
-      // iOS versions before 7.0 did not switch the width and height on device roration
-      if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
-      {
-        size = CGSize(width: size.height, height: size.width)
-      }
-    }
+    let size = UIScreen.main.bounds.size
     
     // Set background frame
     view.frame.size = size
@@ -227,7 +219,7 @@ open class Modal: UIViewController
     dismissButton.layer.masksToBounds = true
   }
   
-  func buttonTapped(_ btn: ModalButton)
+@objc func buttonTapped(_ btn: ModalButton)
   {
     switch btn.actionType
     {
@@ -258,7 +250,7 @@ open class Modal: UIViewController
       let r = bodyLabel.text.boundingRect(
         with: CGSize(width: width - 2 * _settings.padding, height: 90),
         options: .usesLineFragmentOrigin,
-        attributes: [NSFontAttributeName: Font.text],
+        attributes: [NSAttributedString.Key.font: Font.text],
         context: nil
       )
       
@@ -294,7 +286,7 @@ open class Modal: UIViewController
     }
   }
   
-  open func hide()
+    @objc open func hide()
   {
     UIView.animate(
       withDuration: 0.2,

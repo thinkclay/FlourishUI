@@ -43,7 +43,7 @@ open class Button: UIButton
   
   required public init?(coder aDecoder: NSCoder)
   {
-    super.init(coder: aDecoder)
+     super.init(coder: aDecoder)
     setup()
   }
   
@@ -114,7 +114,7 @@ open class Button: UIButton
     
     let groupAnim = CAAnimationGroup()
     groupAnim.duration = 0.7
-    groupAnim.fillMode = kCAFillModeForwards
+    groupAnim.fillMode = CAMediaTimingFillMode.forwards
     groupAnim.isRemovedOnCompletion = false
     groupAnim.animations = [shadowAnim, opacityAnim]
     
@@ -154,7 +154,7 @@ open class Button: UIButton
         
         let groupAnim = CAAnimationGroup()
         groupAnim.duration = 0.7
-        groupAnim.fillMode = kCAFillModeForwards
+        groupAnim.fillMode = CAMediaTimingFillMode.forwards
         groupAnim.isRemovedOnCompletion = false
         groupAnim.animations = [shadowAnim, opacityAnim]
         
